@@ -12,6 +12,7 @@ html {
 body {
   margin: 0;
 }
+
 article,
 aside,
 details,
@@ -2629,7 +2630,16 @@ input[type="search"] {
   }
 }
 .form-group {
+  left: 0px;
+  top: 0px;
+  width: 350px;
+  border: 1px solid #666;
+  text-align: right;
   margin-bottom: 15px;
+}
+.form-group label{
+  float: left;
+   margin: 1px;
 }
 .radio,
 .checkbox {
