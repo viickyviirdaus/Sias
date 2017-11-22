@@ -32,7 +32,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Wali Kelas <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a data-toggle="modal" data-target="#tambahCustomer">Buat Akun Wali Kelas</a></li>
-							<li><a href="#">Lihat Akun Wali Kelas Aktif</a></li>
+							<li><a data-toggle="modal" data-target="#tambahCustomer">Lihat Akun Wali Kelas Aktif</a></li>
 							<li><a href="#">Lihat Akun Wali Kelas Non Aktif</a></li>
 							<!-- <li role="separator" class="divider"></li> -->
 						</ul>
@@ -67,7 +67,7 @@
 	</nav>
 
 	<!-- MODAL TAMBAH CUSTOMER -->
-	<div class="modal fade" id="tambahCustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade" id="	" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
