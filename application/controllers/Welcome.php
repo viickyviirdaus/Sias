@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('headerWali.php');
-		$this->load->view('WMRapor.php');
+		$this->load->view('APerbaruiKelas.php');
 		$this->load->view('footer.php');
 	}
 }

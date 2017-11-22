@@ -1,13 +1,13 @@
 <div class="body" style="min-height: 495px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
-		<h3>Nama Mata Pelajaran</h3>
+		<h3>Biodata Wali Kelas</h3>
 
 		<div class="row" style="padding-right: 480px; padding-left: 500px; padding-top: 20px">
 			<div class="col-md-5">
-				<p style="padding-top: 5px;" class="text-left" >Nilai Tugas 1</p>
-				<p style="padding-top: 20px" class="text-left">Nilai Tugas 2</p>
-				<p style="padding-top: 20px" class="text-left">UAS</p>
-				<p style="padding-top: 20px" class="text-left">UTS</p>				
+				<p style="padding-top: 5px;" class="text-left" >Nama Lengkap</p>
+				<p style="padding-top: 20px" class="text-left">NIP</p>
+				<p style="padding-top: 20px" class="text-left">Password</p>
+				<p style="padding-top: 20px" class="text-left">Kelas yang Diampu</p>				
 			</div>
 			<div class="col-md-7">
 				<form>
