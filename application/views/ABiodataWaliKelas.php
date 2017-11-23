@@ -11,7 +11,7 @@
 			</div>
 			<div class="col-md-7">
 				<form method="post" action="<?php echo base_url('index.php/Controller_waliKelas/ubahDataWaliKelas'); ?>">
-					<input type="hidden" name="id" value="<?php echo $data->id_wali_kelas ?>" required>
+					<input type="hidden" name="id" value="<?php echo $data->id_wali_kelas ?>">
 					<input type="text" name="nama" value="<?php echo $data->nama ?>" class="form-control" required>
 					<input type="text" name="nip" value="<?php echo $data->nip ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="password" value="<?php echo $data->password ?>" class="form-control" style="margin-top: 15px" required>
