@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller_login extends CI_Controller {
+class Controller_user extends CI_Controller { //ganti nama controller, bkn controller login
 
 	public function __construct(){
 		
@@ -108,5 +108,10 @@ class Controller_login extends CI_Controller {
 			// $this->load->view('loginFail', $param);
 			// $this->load->view('footer');
 		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('index.php'));
 	}
 }

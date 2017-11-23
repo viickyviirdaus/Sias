@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4" style="background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(0,0,0,0.5;">
-          <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_login/loginAdmin') ?>" >
+          <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_user/loginAdmin') ?>" >
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center>Login</center></h3></b>
               <div class="col-sm-12 input-sm " style="margin-top: 10px;">

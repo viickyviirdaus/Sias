@@ -60,7 +60,7 @@
 					</li>					
 				</ul>				
 				<ul class="nav navbar-nav navbar-right">
-					<button class="btn btn-danger" style="margin-right: 10px; margin-top: 7px;">Logout</button>
+					<a href="<?php echo base_url('index.php/Controller_user/logout'); ?>"><button class="btn btn-danger" style="margin-right: 10px; margin-top: 7px;" >Logout</button></a>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
