@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 465px;text-align: center;">
+<div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Biodata Siswa</h3>
 		<img src="assets/image/profil.png" style="max-width: 12%; padding-top: 10px">

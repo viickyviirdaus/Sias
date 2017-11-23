@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 495px;text-align: center;">
+<div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Nama Mata Pelajaran</h3>
 

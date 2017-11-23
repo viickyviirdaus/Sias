@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 495px;text-align: center;">
+<div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Lihat Akun Wali Kelas Aktif</h3>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
