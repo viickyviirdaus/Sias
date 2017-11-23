@@ -16,13 +16,13 @@ class Model_waliKelas extends CI_Model{
 	}
 
 	function ambilDataWaliKelas($id){
-		$query = $this->db->query("select * from wali_kelas where id_wali_kelas = '$id'");
+		$query = $this->db->query("select * from wali_kelas join kelas on wali_kelas.id_kelas = kelas.id_kelas where id_wali_kelas = '$id'");
 		$result = $query->result();
 		return (count($result) > 0) ? $result[0] : false ;
 	}
 
 	function ubahDataWaliKelas($id, $data, $tabel){
-		$this->db->where(‘id_wali_kelas’, $id);
+		$this->db->where('id_wali_kelas', $id);
 		$this->db->update($tabel, $data);
 	}
 
