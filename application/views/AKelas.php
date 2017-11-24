@@ -1,6 +1,6 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
-		<h3>Daftar Mata Pelajaran</h3>
+		<h3>Daftar Kelas</h3>
 		<a href="#" id="tambahKelas" class="btn btn-default" style="margin-left: 850px; width: 150px; color: blue"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Tambah Kelas</a>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
 			<thead>	
