@@ -13,7 +13,7 @@
 					<input type="" name="nama_mapel" value = "<?php echo $data->nama_mata_pelajaran ?>" class="form-control" style="margin-top: 5px">
 					<input type="" name="kkm" value = "<?php echo $data->kkm ?>" class="form-control" style="margin-top: 20px">
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 28px">Simpan</button>
-					<a href="">
+					<a href="<? echo base_url('index.php/Controller_mapel/tampilMapel'); ?>">
 						<button class="btn btn-default" style="width: 80px; margin-top: 20px; margin-left: 3px">Batal</button>
 					</a>
 				</form>

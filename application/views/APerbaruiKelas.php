@@ -14,6 +14,9 @@
 					<input type="" name="tahun_ajaran" value="<?php echo $data->tahun_ajaran; ?>" class="form-control" style="margin-top: 15px">
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 150px">Simpan</button>
 				</form>
+				<a href="">
+						<button class="btn btn-default" style="width: 80px; margin-top: 20px; margin-left: 3px">Batal</button>
+					</a>
 			</div>
 			<h3 style="margin-top: 100px">Daftar Siswa</h3>
 		</div>
