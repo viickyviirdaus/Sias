@@ -9,9 +9,9 @@
 			</div>
 			<div class="col-md-7" style="margin-bottom: 10px">
 				<form>
-					<input type="" name="" class="form-control">
-					<input type="" name="" class="form-control" style="margin-top: 15px">
-					<input type="" name="" class="form-control" style="margin-top: 15px">
+					<input type="" name="nama" value="<?php echo $data->nama_kelas; ?>" class="form-control">
+					<input type="" name="ruang" value="<?php echo $data->ruang_kelas; ?>" class="form-control" style="margin-top: 15px">
+					<input type="" name="tahun_ajaran" value="<?php echo $data->tahun_ajaran; ?>" class="form-control" style="margin-top: 15px">
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 150px">Simpan</button>
 				</form>
 			</div>
@@ -44,11 +44,14 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1;
+				foreach ($siswa as $dataSiswa): ?>
 				<tr style="text-align: left;">
-					<td class="text-center" >1</td>
-					<td class="text-left" >Abdul Khodr Abdullan</td>
-					<td class="text-center" >5672</td>
-				</tr>				
+					<td class="text-center" ><?php echo $no; $no++; ?></td>
+					<td class="text-left" ><?php echo $dataSiswa->nama_siswa; ?></td>
+					<td class="text-center" ><?php echo $dataSiswa->nis; ?></td>
+				</tr>
+				<?php endforeach ?>				
 			</tbody>
 			</table>
 		</div>
@@ -82,14 +85,17 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1;
+				foreach ($mapel as $dataMapel): ?>
 				<tr style="text-align: left;">
-					<td class="text-center" >1</td>
-					<td class="text-left" >Matematika</td>
-					<td class="text-center" >75</td>
+					<td class="text-center" ><?php echo $no; $no++; ?></td>
+					<td class="text-left" ><?php echo $dataMapel->nama_mata_pelajaran; ?></td>
+					<td class="text-center" ><?php echo $dataMapel->kkm; ?></td>
 					<td class="text-center" >
 						<a href=""><button class="btn btn-danger">hapus</button></a>
 					</td>
-				</tr>				
+				</tr>
+				<?php endforeach ?>					
 			</tbody>
 			</table>
 		</div>

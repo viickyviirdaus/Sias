@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller_user extends CI_Controller { //ganti nama controller, bkn controller login
+class Controller_user extends CI_Controller {
 
 	public function __construct(){
 		
