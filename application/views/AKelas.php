@@ -1,25 +1,27 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
-		<h3>Daftar Mata Pelajaran</h3>
-		<a href="#" id="tambahMapel" class="btn btn-default" style="margin-left: 850px; width: 150px; color: blue"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Tambah Mata Pelajaran </a>
+		<h3>Daftar Kelas</h3>
+		<a href="#" id="tambahKelas" class="btn btn-default" style="margin-left: 850px; width: 150px; color: blue"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Tambah Kelas</a>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
 			<thead>	
 				<tr>	
 					<th class="text-center">No</th>
-					<th style="width: 300px" class="text-center">Nama Mata Pelajaran</th>
-					<th style="width: 120px" class="text-center">KKM</th>
+					<th style="width: 300px" class="text-center">Nama Kelas</th>
+					<th style="width: 120px" class="text-center">Ruang Kelas</th>
+                    <th style="width: 120px" class="text-center">Tahun Ajaran</th>
 					<th class="text-center">Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php $no = 1;
-				foreach ($data as $mapel): ?>	
+				foreach ($data as $kelas): ?>	
 				<tr style="text-align: left;">
 					<td class="text-center" style="padding-top: 15px"><?php echo $no; $no++; ?></td>
-					<td class="text-left" style="padding-top: 15px"><?php echo $mapel->nama_mata_pelajaran; ?></td>
-					<td class="text-center" style="padding-top: 15px"><?php echo $mapel->kkm; ?></td>
+					<td class="text-left" style="padding-top: 15px"><?php echo $kelas->nama_kelas; ?></td>
+					<td class="text-center" style="padding-top: 15px"><?php echo $kelas->ruang_kelas; ?></td>
+                    <td class="text-center" style="padding-top: 15px"><?php echo $kelas->tahun_ajaran; ?></td>
 					<td class="text-center">
-						<a href="<?php echo base_url('index.php/Controller_mapel/ambilDataMapel/'.$mapel->id_mata_pelajaran); ?>">
+						<a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas); ?>">
 							<button class="btn btn-default" style="width: 130px">Ubah</button>
 						</a>
 					</td>
@@ -31,7 +33,7 @@
 </div>
 
 <!-- Modal -->
-        <div class="modal fade" id="modalTambahMapel" role="dialog">
+        <div class="modal fade" id="modalTambahKelas" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -68,8 +70,8 @@
 
         <script>
             $(document).ready(function () {
-                $("#tambahMapel").click(function () {
-                    $("#modalTambahMapel").modal();
+                $("#tambahKelas").click(function () {
+                    $("#modalTambahKelas").modal();
                 });
             });
         </script>

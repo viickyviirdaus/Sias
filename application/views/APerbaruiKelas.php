@@ -9,9 +9,9 @@
 			</div>
 			<div class="col-md-7" style="margin-bottom: 10px">
 				<form>
-					<input type="" name="" class="form-control">
-					<input type="" name="" class="form-control" style="margin-top: 15px">
-					<input type="" name="" class="form-control" style="margin-top: 15px">
+					<input type="" name="nama" value="<?php echo $data->nama_kelas; ?>" class="form-control">
+					<input type="" name="ruang" value="<?php echo $data->ruang_kelas; ?>" class="form-control" style="margin-top: 15px">
+					<input type="" name="tahun_ajaran" value="<?php echo $data->tahun_ajaran; ?>" class="form-control" style="margin-top: 15px">
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 150px">Simpan</button>
 				</form>
 			</div>
@@ -26,7 +26,7 @@
 					<button type="submit" class="btn btn-default" style="">Cari</button>
 				</div>
 				<div class="col-md-2">
-					<a href="">
+					<a href="#" id="tambahSiswa">
 						<button class="btn">
 							<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 						</button>
@@ -44,11 +44,14 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1;
+				foreach ($siswa as $dataSiswa): ?>
 				<tr style="text-align: left;">
-					<td class="text-center" >1</td>
-					<td class="text-left" >Abdul Khodr Abdullan</td>
-					<td class="text-center" >5672</td>
-				</tr>				
+					<td class="text-center" ><?php echo $no; $no++; ?></td>
+					<td class="text-left" ><?php echo $dataSiswa->nama_siswa; ?></td>
+					<td class="text-center" ><?php echo $dataSiswa->nis; ?></td>
+				</tr>
+				<?php endforeach ?>				
 			</tbody>
 			</table>
 		</div>
@@ -63,7 +66,7 @@
 					<button type="submit" class="btn btn-default" style="">Cari</button>
 				</div>
 				<div class="col-md-2">
-					<a href="">
+					<a href="#" id="tambahMapel">
 						<button class="btn">
 							<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 						</button>
@@ -82,16 +85,107 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1;
+				foreach ($mapel as $dataMapel): ?>
 				<tr style="text-align: left;">
-					<td class="text-center" >1</td>
-					<td class="text-left" >Matematika</td>
-					<td class="text-center" >75</td>
+					<td class="text-center" ><?php echo $no; $no++; ?></td>
+					<td class="text-left" ><?php echo $dataMapel->nama_mata_pelajaran; ?></td>
+					<td class="text-center" ><?php echo $dataMapel->kkm; ?></td>
 					<td class="text-center" >
 						<a href=""><button class="btn btn-danger">hapus</button></a>
 					</td>
-				</tr>				
+				</tr>
+				<?php endforeach ?>					
 			</tbody>
 			</table>
 		</div>
 	</div>
 </div>
+
+
+<!-- Modal Tambah Daftar Siswa-->
+        <div class="modal fade" id="modalTambahSiswa" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" id="formBody">
+                    <div class="modal-header" id="formHeader">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 align="center"><span class="glyphicon glyphicon-user"></span> Register</h4>
+                    </div>
+                    <div class="modal-body" style="padding:20px 30px;">
+                        <form role="form" method="post">
+                            <div class="form-group">
+                                <label for="name"><span class="glyphicon glyphicon-user"></span> Nama Lengkap</label>
+                                <input name="nama" type="text" class="form-control" id="name" placeholder="Masukkan Nama Lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                <input name="username" type="text" class="form-control" id="username" placeholder="Masukkan Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="psw"><span class="glyphicon glyphicon-eye-close"></span> Password</label>
+                                <input name="pass" type="password" class="form-control" id="psw" placeholder="Masukkan Password" required>
+                            </div>
+                            <a href="<?php echo base_url('index.php/home/login/'.$iklan->iklan_id); ?>" id="login"><button type="submit" class="btn btn-success btn-block" id="formSubmit" style="margin-bottom: 25px">Register</button></a>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+        <!-- Modal Tambah Daftar Mapel-->
+        <div class="modal fade" id="modalTambahMapel" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" id="formBody">
+                    <div class="modal-header" id="formHeader">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 align="center"><span class="glyphicon glyphicon-user"></span> Register</h4>
+                    </div>
+                    <div class="modal-body" style="padding:20px 30px;">
+                        <form role="form" method="post">
+                            <div class="form-group">
+                                <label for="name"><span class="glyphicon glyphicon-user"></span> Nama Lengkap</label>
+                                <input name="nama" type="text" class="form-control" id="name" placeholder="Masukkan Nama Lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                <input name="username" type="text" class="form-control" id="username" placeholder="Masukkan Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="psw"><span class="glyphicon glyphicon-eye-close"></span> Password</label>
+                                <input name="pass" type="password" class="form-control" id="psw" placeholder="Masukkan Password" required>
+                            </div>
+                            <a href="<?php echo base_url('index.php/home/login/'.$iklan->iklan_id); ?>" id="login"><button type="submit" class="btn btn-success btn-block" id="formSubmit" style="margin-bottom: 25px">Register</button></a>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("#tambahSiswa").click(function () {
+                    $("#modalTambahSiswa").modal();
+                });
+            });
+            $(document).ready(function () {
+                $("#tambahMapel").click(function () {
+                    $("#modalTambahMapel").modal();
+                });
+            });
+        </script>
