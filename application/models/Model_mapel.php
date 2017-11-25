@@ -18,6 +18,6 @@ class Model_mapel extends CI_Model{
 	}
 
 	function tambahMapel($data, $tabel){
-		$this->db->insert($table,$data);
+		$this->db->insert($tabel,$data);
 	}
 }

@@ -21,9 +21,12 @@
 					<td class="text-center" style="padding-top: 15px"><?php echo $kelas->ruang_kelas; ?></td>
                     <td class="text-center" style="padding-top: 15px"><?php echo $kelas->tahun_ajaran; ?></td>
 					<td class="text-center">
-						<a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas); ?>">
+						<a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataKelas'); ?>">
 							<button class="btn btn-default" style="width: 130px">Ubah</button>
 						</a>
+                        <a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataSiswaMapel'); ?>">
+                            <button class="btn btn-default" style="width: 130px">Siswa dan Mata Pelajaran</button>
+                        </a>
 					</td>
 				</tr>
 				<?php endforeach ?>				
@@ -42,7 +45,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 align="left"></span>Tambah Kelas</h4>
                     </div>
-                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_user/logout'); ?>">
+                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_kelas/tambahKelas'); ?>">
                         <div class="modal-body" style="padding:20px 50px;">
                             <div class="form-group">
                                 <label for="nama"></span>Nama Kelas</label>

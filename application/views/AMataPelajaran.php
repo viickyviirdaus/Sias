@@ -40,7 +40,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 align="left"></span>Tambah Mata Pelajaran</h4>
                     </div>
-                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_user/logout'); ?>">
+                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_mapel/tambahMapel'); ?>">
                         <div class="modal-body" style="padding:20px 50px;">
                             <div class="form-group">
                                 <label for="nama"></span>Nama Mata Pelajaran</label>

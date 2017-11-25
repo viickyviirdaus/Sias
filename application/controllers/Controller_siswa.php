@@ -38,8 +38,8 @@ class Controller_siswa extends CI_Controller {
 		$this->tampilSiswaAktif();
 	}
 
-	public function ambilDataSiswa($id){ //di dppl kurang ($id)
-		$data = $this->Model_siswa->ambilDataSiswa($id);
+	public function ambilDataSiswa($nis){ //di dppl kurang ($id)
+		$data = $this->Model_siswa->ambilDataSiswa($nis);
 		$param = array(
 			'data' 	=> $data,
 		);
@@ -110,8 +110,9 @@ class Controller_siswa extends CI_Controller {
 			'nis'				=> $this->input->post('nis'),
 			'nisn'				=> $this->input->post('nisn'),
 			'jenis_kelamin'		=> $this->input->post('jk'),
-			'password'			=> $this->input->post('password'),
-			'foto'				=> $file_name
+			'password'			=> $this->input->post('psw'),
+			'foto'				=> $file_name,
+			'status'			=> 'aktif'
 		);
 		$this->Model_siswa->tambahAkunaSiswa($data, $tabel);
 		

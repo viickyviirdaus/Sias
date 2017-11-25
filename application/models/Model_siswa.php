@@ -2,7 +2,7 @@
 class Model_siswa extends CI_Model{
 	
 	function tampilSiswaAktif(){
-		$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa join kelas on kelas.id_kelas = anggota_kelas.id_kelas where siswa.status = 'aktif'");
+		$query = $this->db->query("select * from siswa left join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa left join kelas on kelas.id_kelas = anggota_kelas.id_kelas where siswa.status = 'aktif'");
 		return $query->result();
 	}
 
@@ -15,8 +15,8 @@ class Model_siswa extends CI_Model{
 		$this->db->query("update siswa set status = 'nonaktif' where id_siswa = $id");
 	}
 
-	function ambilDataSiswa($id){
-		$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa join kelas on kelas.id_kelas = anggota_kelas.id_kelas where siswa.id_siswa = '$id'");
+	function ambilDataSiswa($nis){
+		$query = $this->db->query("select * from siswa where nis = '$nis'");
 		$result = $query->result();
 		return (count($result) > 0) ? $result[0] : false ;
 	}
@@ -27,6 +27,6 @@ class Model_siswa extends CI_Model{
 	}
 
 	function tambahAkunaSiswa($data, $tabel){
-		$this->db->insert($table,$data);
+		$this->db->insert($tabel,$data);
 	}
 }

@@ -13,6 +13,7 @@
 				<div class="col-md-5">
 					<p style="padding-top: 5px;" class="text-left">Nama Lengkap</p>
 					<p style="padding-top: 20px" class="text-left">NIS</p>
+					<p style="padding-top: 20px" class="text-left">NISN</p>
 					<p style="padding-top: 20px" class="text-left">Jenis Kelamin</p>
 					<p style="padding-top: 20px" class="text-left">Password</p>				
 				</div>
@@ -20,6 +21,7 @@
 					<input type="hidden" name="id" value="<?php echo $data->id_siswa ?>">
 					<input type="text" name="nama" value="<?php echo $data->nama_siswa ?>" class="form-control" required>
 					<input type="text" name="nis" value="<?php echo $data->nis ?>" class="form-control" style="margin-top: 15px" required>
+					<input type="text" name="nisn" value="<?php echo $data->nisn ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="jk" value="<?php echo $data->jenis_kelamin ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="password" value="<?php echo $data->password ?>" class="form-control" style="margin-top: 15px" required>	
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 17px">Simpan</button>

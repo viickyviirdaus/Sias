@@ -71,6 +71,7 @@ class Controller_waliKelas extends CI_Controller {
 			'nip'		=> $this->input->post('nip'),
 			'password'	=> $this->input->post('psw'),
 			'id_kelas'	=> $this->input->post('kelas'),
+			'status'	=> 'aktif'
 		);
 
 		$this->Model_waliKelas->tambahAkunaWaliKelas($data, $tabel);

@@ -27,6 +27,6 @@ class Model_waliKelas extends CI_Model{
 	}
 
 	function tambahAkunaWaliKelas($data, $tabel){
-		$this->db->insert($table,$data);
+		$this->db->insert($tabel,$data);
 	}
 }

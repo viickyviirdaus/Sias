@@ -24,7 +24,7 @@
 					<td class="text-center">
 						<div class="row" style="padding-left: 53px; padding-right: 65px">
 							<div class="col-md-6" style="margin-top: 2px">
-								<a href="<?php echo base_url('index.php/Controller_siswa/ambilDataSiswa/'.$akun->id_siswa); ?>">						
+								<a href="<?php echo base_url('index.php/Controller_siswa/ambilDataSiswa/'.$akun->nis); ?>">						
 									<button class="btn btn-default" style="width: 110px ">Ubah Biodata</button>
 								</a>		
 							</div>
@@ -42,4 +42,3 @@
 		</table>
 	</div>
 </div>
-

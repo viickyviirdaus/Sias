@@ -23,11 +23,11 @@ class Model_kelas extends CI_Model{
 	}
 
 	function ubahDataKelas($id, $data, $tabel){
-		$this->db->where('id_siswa', $id);
+		$this->db->where('id_kelas', $id);
 		$this->db->update($tabel, $data);
 	}
 
 	function tambahKelas($data, $tabel){
-		$this->db->insert($table,$data);
+		$this->db->insert($tabel,$data);
 	}
 }

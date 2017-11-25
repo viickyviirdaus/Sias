@@ -45,5 +45,13 @@ class Controller_mapel extends CI_Controller {
 		$this->tampilMapel(); //Beda sama kyk yg di dppl, ganti dppl
 	}
 
-	
+	public function tambahMapel(){
+		$tabel = 'mata_pelajaran';
+		$data = array(
+			'nama_mata_pelajaran'	=> $this->input->post('nama'),
+			'kkm'					=> $this->input->post('kkm'),
+		);
+		$this->Model_mapel->tambahMapel($data, $tabel);
+		$this->tampilMapel();
+	}
 }
