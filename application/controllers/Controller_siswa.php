@@ -85,7 +85,34 @@ class Controller_siswa extends CI_Controller {
 		$this->tampilSiswaAktif(); //Beda sama kyk yg di dppl, ganti dppl
 	}
 
-	public function tambahAkunaSiswa(){
+	public function tambahAkunSiswa(){
+		$config['upload_path'] = './uploads/';
+		$config['file_name']   = 'foto';
+		$config['allowed_types']  = 'jpeg|gif|jpg|png';
+ 
+		$this->load->library('upload', $config);
+
+		$file_name = "";
+
+		$this->upload->initialize($config);
+
+		if ( $this->upload->do_upload('avatar')){
+			$data = $this->upload->data();
+			$file_name = $data['file_name'];
+		}else{
+			var_dump($this->upload->display_errors());
+		}
+
+		$tabel = 'siswa';
+
+		$data = array(
+			'nama_siswa'		=> $this->input->post('nama'),
+			'nis'				=> $this->input->post('nis'),
+			'nisn'				=> $this->input->post('nisn'),
+			'jenis_kelamin'		=> $this->input->post('jk'),
+			'password'			=> $this->input->post('password'),
+			'foto'				=> $file_name
+		);
 		$this->Model_siswa->tambahAkunaSiswa($data, $tabel);
 		
 		$this->load->view('headerAdmin');

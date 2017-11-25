@@ -74,25 +74,33 @@
                 <div class="modal-content" id="formBody">
                     <div class="modal-header" id="formHeader">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 align="center"><span class="glyphicon glyphicon-log-in"></span> Login</h4>
+                        <h4 align="left"></span>Buat Akun Wali Kelas</h4>
                     </div>
-                    <div class="modal-body" style="padding:20px 50px;">
-                        <form role="form">
+                    
+                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_waliKelas/tambahAkunWaliKelas'); ?>">
+                        <div class="modal-body" style="padding:20px 50px;">
                             <div class="form-group">
-                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                <input name="usrname" type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+                                <label for="nama">Nama Lengkap</label>
+                                <input name="nama" type="text" class="form-control" id="nama" required>
                             </div>
                             <div class="form-group">
-                                <label for="psw"><span class="glyphicon glyphicon-eye-close"></span> Password</label>
-                                <input name="psw" type="text" class="form-control" id="psw" placeholder="Enter password" required>
+                                <label for="nip">NIP</label>
+                                <input name="nip" type="text" class="form-control" id="nip" required>
                             </div>
-                            <a href="#" id="login"><button type="submit" class="btn btn-success btn-block" id="formSubmit">Login</button></a>
-                            
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <p>Belum punya akun ? <a href="#" id="signuplink" data-dismiss="modal">Sign Up</a></p>
-                    </div>
+                            <div class="form-group">
+                                <label for="psw">Password</label>
+                                <input name="psw" type="text" class="form-control" id="psw" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kelas">Kelas yang diampu</label>
+                                <input name="kelas" type="text" class="form-control" id="kelas" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
+                            <button type="batal" class="btn btn-success btn-block" id="closeModalWaliKelas">Batal</button>
+                        </div> 
+                    </form>
                 </div>
 
             </div>
@@ -106,29 +114,46 @@
                 <div class="modal-content" id="formBody">
                     <div class="modal-header" id="formHeader">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 align="center"><span class="glyphicon glyphicon-user"></span> Register</h4>
+                        <h4 align="left"></span>Buat Akun Siswa</h4>
                     </div>
-                    <div class="modal-body" style="padding:20px 30px;">
-                        <form role="form" method="post">
+                    <img align="center" src="<?php echo base_url('assets/image/avatar.jpg') ?>" class="img-responsive" style="max-width: 12%; padding-top: 10px" alt="Image"> 
+                    <p align="center">Unggah Foto</p>
+                    <form enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('index.php/Controller_siswa/tambahAkunSiswa'); ?>">
+                        <div class="modal-body" style="padding:20px 50px;">
                             <div class="form-group">
-                                <label for="name"><span class="glyphicon glyphicon-user"></span> Nama Lengkap</label>
-                                <input name="nama" type="text" class="form-control" id="name" placeholder="Masukkan Nama Lengkap" required>
+                                <input name="avatar" type="file" style="width: 180px; margin-left: 165px" required>
                             </div>
                             <div class="form-group">
-                                <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                <input name="username" type="text" class="form-control" id="username" placeholder="Masukkan Username" required>
+                                <label for="nama"></span>Nama Lengkap</label>
+                                <input name="nama" type="text" class="form-control" id="nama" required>
                             </div>
                             <div class="form-group">
-                                <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-                                <input name="email" type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                                <label for="nis"></span>NIS</label>
+                                <input name="nis" type="text" class="form-control" id="nis" required>
                             </div>
                             <div class="form-group">
-                                <label for="psw"><span class="glyphicon glyphicon-eye-close"></span> Password</label>
-                                <input name="pass" type="password" class="form-control" id="psw" placeholder="Masukkan Password" required>
+                                <label for="nisn"></span>NISN</label>
+                                <input name="nisn" type="text" class="form-control" id="nisn" required>
                             </div>
-                            <a href="<?php echo base_url('index.php/home/login/'.$iklan->iklan_id); ?>" id="login"><button type="submit" class="btn btn-success btn-block" id="formSubmit" style="margin-bottom: 25px">Register</button></a>
-                        </form>
-                    </div>
+                            <div class="form-group">
+                                <label for="jk"></span>Jenis Kelamin</label>
+                                <select name="jk" required>
+                                   <option value="L">L</option> 
+                                   <option value="P">P</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="psw"></span> Password</label>
+                                <input name="psw" type="text" class="form-control" id="psw" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
+                            <button type="batal" class="btn btn-success btn-block" id="closeModalSiswa">Batal</button>
+                        </div>
+                    </form>
+                    
+                    
                 </div>
 
             </div>
@@ -146,6 +171,17 @@
                 });
             });
 
+            $(document).ready(function () {
+                $('#closeModalWaliKelas').click(function() {
+                    $('#modalBuatAkunWaliKelas').modal('hide');
+                });
+            });
+
+            $(document).ready(function () {
+                $('#closeModalSiswa').click(function() {
+                    $('#modalBuatAkunSiswa').modal('hide');
+                });
+            });
         </script>
 
         

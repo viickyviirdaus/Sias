@@ -22,9 +22,6 @@ class Model_kelas extends CI_Model{
 		return $query->result();
 	}
 
-
-	//kelas siswa  anggota kelas
-
 	function ubahDataKelas($id, $data, $tabel){
 		$this->db->where('id_siswa', $id);
 		$this->db->update($tabel, $data);

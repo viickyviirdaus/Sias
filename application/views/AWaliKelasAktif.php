@@ -27,7 +27,7 @@
 								</a>		
 							</div>
 							<div class="col-md-6" style="margin-top: 2px">
-								<form action="<?php echo base_url('index.php/Controller_waliKelas/nonaktifkanAkunWaliKelas/'.$akun->id_wali_kelas); ?>">
+								<form action="<?php echo base_url('index.php/Controller_waliKelas/nonaktifkanAkunWaliKelas/'.$akun->id_wali_kelas); ?>" onsubmit="return confirm('Apakah anda yakin ingin menonaktifkan akun <?php echo $akun->nama; ?>');">
 									<button type="submit" class="btn btn-danger" style="width: 130px; ">Nonaktif</button>
 								</form>
 	

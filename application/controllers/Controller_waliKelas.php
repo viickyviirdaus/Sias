@@ -64,9 +64,16 @@ class Controller_waliKelas extends CI_Controller {
 		$this->tampilWaliKelasAktif(); //Beda sama kyk yg di dppl, ganti dppl
 	}
 
-	public function tambahAkunaWaliKelas(){
+	public function tambahAkunWaliKelas(){
+		$tabel = 'wali_kelas';
+		$data = array(
+			'nama'		=> $this->input->post('nama'),
+			'nip'		=> $this->input->post('nip'),
+			'password'	=> $this->input->post('psw'),
+			'id_kelas'	=> $this->input->post('kelas'),
+		);
+
 		$this->Model_waliKelas->tambahAkunaWaliKelas($data, $tabel);
-		
 		$this->load->view('headerAdmin');
 		$this->load->view('dashboardAdmin');
 		$this->load->view('footer');
