@@ -30,4 +30,12 @@ class Model_kelas extends CI_Model{
 	function tambahKelas($data, $tabel){
 		$this->db->insert($tabel,$data);
 	}
+
+	function tambahSiswaDalamKelas($data, $tabel){
+		$this->db->insert($tabel,$data);
+	}
+
+	function hapusSiswaDalamKelas($id_kelas, $id_mata_pelajaran, $tabel){
+		$this->db->query("delete from $tabel where id_kelas = '$id_kelas' and id_mata_pelajaran = '$id_mata_pelajaran'");
+	}
 }

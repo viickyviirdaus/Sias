@@ -114,7 +114,7 @@ class Controller_siswa extends CI_Controller {
 			'foto'				=> $file_name,
 			'status'			=> 'aktif'
 		);
-		$this->Model_siswa->tambahAkunaSiswa($data, $tabel);
+		$this->Model_siswa->tambahAkunSiswa($data, $tabel);
 		
 		$this->load->view('headerAdmin');
 		$this->load->view('dashboardAdmin');

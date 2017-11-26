@@ -30,7 +30,7 @@
 							</div>
 							<div class="col-md-6" style="margin-top: 2px">
 								<form action="<?php echo base_url('index.php/Controller_siswa/nonaktifkanAkunSiswa/'.$akun->id_siswa); ?>" onsubmit="return confirm('Apakah anda yakin ingin menonaktifkan akun <?php echo $akun->nama_siswa; ?>');">
-									<button type="submit" class="btn btn-danger" o style="width: 110px; ">Nonaktif</button>
+									<button type="submit" class="btn btn-danger" style="width: 110px; ">Nonaktif</button>
 								</form>
 
 							</div>

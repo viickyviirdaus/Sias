@@ -26,7 +26,7 @@ class Model_siswa extends CI_Model{
 		$this->db->update($tabel, $data);
 	}
 
-	function tambahAkunaSiswa($data, $tabel){
+	function tambahAkunSiswa($data, $tabel){
 		$this->db->insert($tabel,$data);
 	}
 }
