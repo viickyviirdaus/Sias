@@ -32,7 +32,7 @@
 			<div class="row" style="padding-right: 600px; padding-left: 120px">
 				<div class="col-md-8" >
 					<input type="hidden" name="id" value="<?php echo $id_kelas; ?>">
-					<input type="" name="nis" class="form-control text-center" placeholder="Masukkan NIS">
+					<input type="" name="nis" class="form-control text-center" placeholder="Masukkan NIS" required>
 				</div>
 				<div class="col-md-2">
 						<button class="btn" type="submit">
@@ -76,7 +76,7 @@
 			<div class="row" style="padding-right: 600px; padding-left: 120px">
 				<div class="col-md-8" >
 					<input type="hidden" name="id" value="<?php echo $id_kelas; ?>">
-					<input type="" name="mapel" class="form-control text-center" placeholder="Masukkan Nama Mata Pelajaran">
+					<input type="" name="mapel" class="form-control text-center" placeholder="Masukkan Nama Mata Pelajaran" required>
 				</div>
 				<div class="col-md-2">
 						<button class="btn" type="submit">

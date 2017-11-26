@@ -77,7 +77,6 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 		$siswa = $this->Model_siswa->ambilDataSiswa($this->input->post('nis'));
 		$data = array(
 			'id_kelas' 		=> $id_kelas,
-			'nama_kelas' => $kelas->nama_kelas,
 			'id_siswa'		=> $siswa->id_siswa,
 			'tahun_ajaran' 	=> $kelas->tahun_ajaran
 		);
@@ -97,16 +96,15 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 		$mapel = $this->Model_mapel->ambilDataMapelByNama($this->input->post('mapel'));
 		$data = array(
 			'id_kelas' 				=> $id_kelas,
-			'nama_kelas' => $kelas->nama_kelas,
 			'id_mata_pelajaran'		=> $mapel->id_mata_pelajaran
 		);
-		$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
+		$this->Model_kelas->tambahMapelDalamKelas($data, $tabel);
 		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
 	}
 
 	public function hapusMapelDalamKelas($id_mata_pelajaran,$id_kelas){
 		$tabel = 'detail_mata_pelajaran';
-		$this->Model_kelas->hapusSiswaDalamKelas($id_kelas, $id_mata_pelajaran, $tabel);
+		$this->Model_kelas->hapusMapelDalamKelas($id_kelas, $id_mata_pelajaran, $tabel);
 		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
 	}
 }
