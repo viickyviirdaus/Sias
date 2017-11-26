@@ -24,7 +24,8 @@
   <script src="<?php echo base_url('assets'); ?>/demo/particles.js" ></script>
   <script src="<?php echo base_url('assets'); ?>/js/app.js" ></script>
 
-  <header style="background:rgba(0,0,0,0.6;">
+
+  <header style="background:rgba(0,0,0,0.3); padding: 10px;">
     <center >
       <h2 style="color: white">SIAS</h2>
       <h5 style="color: white">Sistem Informasi Akademik Siswa</h5>
@@ -33,26 +34,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4" style="background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(0,0,0,0.5;">
-          <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_user/loginAdmin') ?>" >
+        <div class="col-md-4" style="background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(0,0,0,0.6);">
+          <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_user/login/waliKelas') ?>" >
             <div class="form-group" style="margin-top: 5px; ">
-              <b><h3><center>Login</center></h3></b>
+              <b><h3><center style="color: white;">Login Wali Kelas</center></h3></b>
               <div class="col-sm-12 input-sm " style="margin-top: 10px;">
-                <label>NISN : </label>
-                <input type="text" class="form-control" name="usr" placeholder="Masukkan NISN">
+                <input type="text" class="form-control" name="nip" placeholder="Masukkan NIP" required>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12 input-sm">
-                <label>Password :</label>
-                <input type="password" class="form-control" name="psw" placeholder="Masukkan password">
+                <input type="password" class="form-control" name="psw" placeholder="Masukkan password" required>
               </div>
             </div>
             <center>
               <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10 button-sm">
                   <button type="submit" class="btn btn-default" >Login</button>
-                </div>
               </div>
             </center>
           </form>
