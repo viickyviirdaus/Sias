@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				 <a class="navbar-brand" href="#">
-        			<img alt="Brand" src="assets/image/logo.png" style="max-height: 100%">
+        			<img alt="Brand" src="<?php echo base_url('assets'); ?>/image/logo.png" style="max-height: 100%">
       			</a>
 			</div>
 
