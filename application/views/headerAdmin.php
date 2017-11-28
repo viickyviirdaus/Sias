@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				 <a class="navbar-brand" href="#">
-        			<img alt="Brand" src="<?php echo base_url('assets'); ?>/image/logo.png" style="max-height: 100%">
+        			<img alt="Brand" src="<?php echo base_url('assets'); ?>/image/logoSias.png" style="max-height: 100%">
       			</a>
 			</div>
 
@@ -56,8 +56,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="<? echo base_url('index.php/Controller_mapel/tampilMapel'); ?>">Lihat Mata Pelajaran</a></li>
 						</ul>
-					</li>					
-				</ul>				
+					</li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<a href="<?php echo base_url('index.php/Controller_user/logout'); ?>"><button class="btn btn-danger" style="margin-right: 10px; margin-top: 7px;" >Logout</button></a>
 				</ul>
@@ -76,7 +76,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 align="left"></span>Buat Akun Wali Kelas</h4>
                     </div>
-                    
+
                     <form role="form" method="post" action="<?php echo base_url('index.php/Controller_waliKelas/tambahAkunWaliKelas'); ?>">
                         <div class="modal-body" style="padding:20px 50px;">
                             <div class="form-group">
@@ -99,12 +99,12 @@
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
                             <button type="batal" class="btn btn-success btn-block" id="closeModalWaliKelas">Batal</button>
-                        </div> 
+                        </div>
                     </form>
                 </div>
 
             </div>
-        </div> 
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="modalBuatAkunSiswa" role="dialog">
@@ -116,7 +116,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 align="left"></span>Buat Akun Siswa</h4>
                     </div>
-                    <img align="center" src="<?php echo base_url('assets/image/avatar.jpg') ?>" class="img-responsive" style="max-width: 12%; padding-top: 10px" alt="Image"> 
+                    <img align="center" src="<?php echo base_url('assets/image/avatar.jpg') ?>" class="img-responsive" style="max-width: 12%; padding-top: 10px" alt="Image">
                     <p align="center">Unggah Foto</p>
                     <form enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('index.php/Controller_siswa/tambahAkunSiswa'); ?>">
                         <div class="modal-body" style="padding:20px 50px;">
@@ -138,7 +138,7 @@
                             <div class="form-group">
                                 <label for="jk"></span>Jenis Kelamin</label>
                                 <select name="jk" required>
-                                   <option value="L">L</option> 
+                                   <option value="L">L</option>
                                    <option value="P">P</option>
                                 </select>
                             </div>
@@ -152,12 +152,12 @@
                             <button type="batal" class="btn btn-success btn-block" id="closeModalSiswa">Batal</button>
                         </div>
                     </form>
-                    
-                    
+
+
                 </div>
 
             </div>
-        </div> 
+        </div>
 
         <script>
             $(document).ready(function () {
@@ -183,5 +183,3 @@
                 });
             });
         </script>
-
-        
