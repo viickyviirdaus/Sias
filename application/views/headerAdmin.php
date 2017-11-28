@@ -32,7 +32,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#" id="buatAkunWaliKelas">Buat Akun Wali Kelas</a></li>
 							<li><a href="<?php echo base_url('index.php/Controller_waliKelas/tampilWaliKelasAktif'); ?>">Lihat Akun Wali Kelas Aktif</a></li>
-							<li><a href="<?php echo base_url('index.php/Controller_waliKelas/tampilWaliKelasTidakAktif'); ?>"">Lihat Akun Wali Kelas Non Aktif</a></li>
+							<li><a href="<?php echo base_url('index.php/Controller_waliKelas/tampilWaliKelasTidakAktif'); ?>"">Lihat Akun Wali Kelas Tidak Aktif</a></li>
 							<!-- <li role="separator" class="divider"></li> -->
 						</ul>
 					</li>
@@ -41,7 +41,7 @@
 						<ul class="dropdown-menu">
 							<li><a id="buatAkunSiswa" href="#">Buat Akun Siswa</a></li>
 							<li><a href="<?php echo base_url('index.php/Controller_siswa/tampilSiswaAktif'); ?>">Lihat Akun Siswa Aktif</a></li>
-							<li><a href="<?php echo base_url('index.php/Controller_siswa/tampilSiswaTidakAktif'); ?>"">Lihat Akun Siswa Non Aktif</a></li>
+							<li><a href="<?php echo base_url('index.php/Controller_siswa/tampilSiswaTidakAktif'); ?>"">Lihat Akun Siswa Tidak Aktif</a></li>
 							<!-- <li role="separator" class="divider"></li> -->
 						</ul>
 					</li>
