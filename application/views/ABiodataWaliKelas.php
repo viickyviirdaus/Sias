@@ -6,8 +6,7 @@
 			<div class="col-md-5">
 				<p style="padding-top: 5px;" class="text-left">Nama Lengkap</p>
 				<p style="padding-top: 20px" class="text-left">NIP</p>
-				<p style="padding-top: 20px" class="text-left">Password</p>
-				<p style="padding-top: 20px" class="text-left">Kelas yang Diampu</p>				
+				<p style="padding-top: 20px" class="text-left">Password</p>		
 			</div>
 			<div class="col-md-7">
 				<form method="post" action="<?php echo base_url('index.php/Controller_waliKelas/ubahDataWaliKelas'); ?>">
@@ -15,7 +14,6 @@
 					<input type="text" name="nama" value="<?php echo $data->nama ?>" class="form-control" required>
 					<input type="text" name="nip" value="<?php echo $data->nip ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="password" value="<?php echo $data->password ?>" class="form-control" style="margin-top: 15px" required>
-					<input type="text" name="kelas" value="<?php echo $data->id_kelas ?>" class="form-control" style="margin-top: 15px" required>
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 28px">Simpan</button>
 					<a href="<?php echo base_url('index.php/Controller_waliKelas/tampilWaliKelasAktif'); ?>" class="btn btn-default" style="width: 80px; margin-top: 20px; margin-left: 3px">Batal</a>
 				</form>

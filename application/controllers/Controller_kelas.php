@@ -8,6 +8,7 @@ class Controller_kelas extends CI_Controller {
 		$this->load->model('Model_kelas');
 		$this->load->model('Model_mapel');
 		$this->load->model('Model_siswa');
+		$this->load->model('Model_waliKelas');
 		$this->load->library('session');
 	}
 
@@ -25,7 +26,8 @@ class Controller_kelas extends CI_Controller {
 		if ($ket == 'dataKelas') {
 			$data = $this->Model_kelas->ambilDataKelas($id);
 			$param = array(
-				'data' 	=> $data,
+				'data' 			=> $data,
+				'wali_kelas'	=> $this->Model_waliKelas->ambilWaliKelasKosong($id),
 			);
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiKelas', $param);
@@ -59,13 +61,15 @@ class Controller_kelas extends CI_Controller {
 
 	public function ubahDataKelas(){
 		$tabel = 'kelas';
-		$id = $this->input->post('id');
+		$id_kelas = $this->input->post('id');
 		$data = array(
 			'nama_kelas'	=> $this->input->post('nama'),
 			'ruang_kelas'	=> $this->input->post('ruang'),
 			'tahun_ajaran'	=> $this->input->post('tahun'),
 		);
-		$this->Model_kelas->ubahDataKelas($id, $data, $tabel);
+		$this->Model_kelas->ubahDataKelas($id_kelas, $data, $tabel);
+
+		$this->Model_waliKelas->ubahDataKelasWaliKelas($this->input->post('id_wali_kelas'), $id_kelas);
 		
 		$data = $this->Model_kelas->tampilkelas();
 		$param = array(
