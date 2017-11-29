@@ -1,3 +1,4 @@
+<body <?php if ($keberadaan == false){ echo "onload=tidakAda()";}?>>
 		<h3 align="center" style="margin-left: 105px; margin-top: 80px;"><?php echo $nama_kelas; ?></h3>
 		<h3 style="margin-left: 105px">Daftar Mata Pelajaran</h3>
 		<div class="row" style="padding-right: 390px; padding-left: 120px">
@@ -42,5 +43,10 @@
 			</div>
 		</form>
 		
-	</div>
-</div>
+</body>
+
+<script>
+function tidakAda() {
+    alert("Mata pelajaran yang anda cari tidak terdaftar");
+}
+</script>

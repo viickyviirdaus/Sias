@@ -34,9 +34,10 @@ class Controller_kelas extends CI_Controller {
 			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id);
 			$kelas = $this->Model_kelas->ambilDataKelas($id);
 			$param = array(
-				'id_kelas' => $id,
-				'nama_kelas' => $kelas->nama_kelas,
-				'siswa'	=> $siswa,
+				'keberadaan'	=> true,
+				'id_kelas' 		=> $id,
+				'nama_kelas'	=> $kelas->nama_kelas,
+				'siswa'			=> $siswa,
 			);
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiSiswaDalamKelas', $param);
@@ -45,9 +46,10 @@ class Controller_kelas extends CI_Controller {
 			$mapel = $this->Model_kelas->ambilDataMapelDalamKelas($id);
 			$kelas = $this->Model_kelas->ambilDataKelas($id);
 			$param = array(
-				'id_kelas' => $id,
-				'nama_kelas' => $kelas->nama_kelas,
-				'mapel'	=> $mapel,
+				'keberadaan'	=> true,
+				'id_kelas'		=> $id,
+				'nama_kelas'	=> $kelas->nama_kelas,
+				'mapel'			=> $mapel,
 			);
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiMapelDalamKelas', $param);
@@ -97,13 +99,26 @@ class Controller_kelas extends CI_Controller {
 		$id_kelas = $this->input->post('id');
 		$kelas = $this->Model_kelas->ambilDataKelas($id_kelas);
 		$siswa = $this->Model_siswa->ambilDataSiswa($this->input->post('nis'));
-		$data = array(
-			'id_kelas' 		=> $id_kelas,
-			'id_siswa'		=> $siswa->id_siswa,
-			'tahun_ajaran' 	=> $kelas->tahun_ajaran
-		);
-		$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataSiswa');
+		if ($siswa != false) {
+			$data = array(
+				'id_kelas' 		=> $id_kelas,
+				'id_siswa'		=> $siswa->id_siswa,
+				'tahun_ajaran' 	=> $kelas->tahun_ajaran
+			);
+			$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
+			$this->ambilDataKelas($id_kelas,'dataSiswa');
+		} else if ($siswa == false) {
+			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id_kelas);
+			$param = array(
+				'keberadaan'	=> false,
+				'id_kelas' 		=> $id_kelas,
+				'nama_kelas' 	=> $kelas->nama_kelas,
+				'siswa'			=> $siswa,
+			);
+			$this->load->view('headerAdmin');
+			$this->load->view('APerbaruiSiswaDalamKelas', $param);
+			$this->load->view('footer');
+		}
 	}
 
 	public function hapusSiswaDalamKelas($id_siswa,$id_kelas){
@@ -116,12 +131,27 @@ class Controller_kelas extends CI_Controller {
 		$tabel = 'detail_mata_pelajaran';
 		$id_kelas = $this->input->post('id');
 		$mapel = $this->Model_mapel->ambilDataMapelByNama($this->input->post('mapel'));
-		$data = array(
-			'id_kelas' 				=> $id_kelas,
-			'id_mata_pelajaran'		=> $mapel->id_mata_pelajaran
-		);
-		$this->Model_kelas->tambahMapelDalamKelas($data, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataMapel');
+		if ($mapel != false) {
+			$data = array(
+				'id_kelas' 				=> $id_kelas,
+				'id_mata_pelajaran'		=> $mapel->id_mata_pelajaran
+			);
+			$this->Model_kelas->tambahMapelDalamKelas($data, $tabel);
+			$this->ambilDataKelas($id_kelas,'dataMapel');
+		} else if ($mapel == false) {
+			$mapel = $this->Model_kelas->ambilDataMapelDalamKelas($id_kelas);
+			$kelas = $this->Model_kelas->ambilDataKelas($id_kelas);
+			$param = array(
+				'keberadaan'	=> false,
+				'id_kelas' 		=> $id_kelas,
+				'nama_kelas'	=> $kelas->nama_kelas,
+				'mapel'			=> $mapel,
+			);
+			$this->load->view('headerAdmin');
+			$this->load->view('APerbaruiMapelDalamKelas', $param);
+			$this->load->view('footer');
+		}
+		
 	}
 
 	public function hapusMapelDalamKelas($id_mata_pelajaran,$id_kelas){

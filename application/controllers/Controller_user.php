@@ -44,7 +44,6 @@ class Controller_user extends CI_Controller {
 				'nis' 		=> $nis,
 				'password' 	=> $password
 				);
-			var_dump($where);
 			$data = $this->Model_user->loginSiswa("siswa",$where)->result();
 			$cek = $this->Model_user->loginSiswa("siswa",$where)->num_rows();
 			if($cek == 1){
@@ -68,7 +67,6 @@ class Controller_user extends CI_Controller {
 				'nip' 		=> $nip,
 				'password' 	=> $password
 				);
-			var_dump($where);
 			$data = $this->Model_user->loginWaliKelas("wali_kelas",$where)->result();
 			$cek = $this->Model_user->loginWaliKelas("wali_kelas",$where)->num_rows();
 			if($cek == 1){
