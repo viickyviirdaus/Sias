@@ -17,18 +17,18 @@ class Controller_mapel extends CI_Controller {
 		);
 
 		$this->load->view('headerAdmin');
-		$this->load->view('AMataPelajaran', $param);//Tampil Mapel
+		$this->load->view('AMataPelajaran', $param);
 		$this->load->view('footer');
 	}
 
-	public function ambilDataMapel($id){ //di dppl kurang ($id)
+	public function ambilDataMapel($id){
 		$data = $this->Model_mapel->ambilDataMapel($id);
 		$param = array(
 			'data' 	=> $data,
 		);
 
 		$this->load->view('headerAdmin');
-		$this->load->view('APerbaruiMataPelajaran', $param); //UbahDataMapel
+		$this->load->view('APerbaruiMataPelajaran', $param);
 		$this->load->view('footer');
 	}
 
@@ -42,7 +42,14 @@ class Controller_mapel extends CI_Controller {
 
 		$this->Model_mapel->ubahDataMapel($id, $data, $tabel);
 
-		$this->tampilMapel(); //Beda sama kyk yg di dppl, ganti dppl
+		$data = $this->Model_mapel->tampilMapel();
+		$param = array(
+			'data' 	=> $data,
+		);
+
+		$this->load->view('headerAdmin');
+		$this->load->view('AMataPelajaran', $param);
+		$this->load->view('footer');
 	}
 
 	public function tambahMapel(){
@@ -52,6 +59,14 @@ class Controller_mapel extends CI_Controller {
 			'kkm'					=> $this->input->post('kkm'),
 		);
 		$this->Model_mapel->tambahMapel($data, $tabel);
-		$this->tampilMapel();
+
+		$data = $this->Model_mapel->tampilMapel();
+		$param = array(
+			'data' 	=> $data,
+		);
+
+		$this->load->view('headerAdmin');
+		$this->load->view('AMataPelajaran', $param);
+		$this->load->view('footer');
 	}
 }

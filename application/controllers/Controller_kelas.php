@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller_kelas extends CI_Controller { //ganti nama controller, bkn controller login
+class Controller_kelas extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -17,18 +17,18 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 			'data' 	=> $data,
 		);
 		$this->load->view('headerAdmin');
-		$this->load->view('AKelas', $param);//Tampil kelas
+		$this->load->view('AKelas', $param);
 		$this->load->view('footer');
 	}
 
-	public function ambilDataKelas($id,$ket){ //di dppl kurang ($id)
+	public function ambilDataKelas($id,$ket){
 		if ($ket == 'dataKelas') {
 			$data = $this->Model_kelas->ambilDataKelas($id);
 			$param = array(
 				'data' 	=> $data,
 			);
 			$this->load->view('headerAdmin');
-			$this->load->view('APerbaruiKelas', $param); //UbahDataMapel
+			$this->load->view('APerbaruiKelas', $param);
 			$this->load->view('footer');
 		} elseif ($ket == 'dataSiswaMapel') {
 			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id);
@@ -42,7 +42,7 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 				'mapel'	=> $mapel,
 			);
 			$this->load->view('headerAdmin');
-			$this->load->view('APerbaruiSiswaMapelDalamKelas', $param); //UbahDataMapel
+			$this->load->view('APerbaruiSiswaMapelDalamKelas', $param);
 			$this->load->view('footer');
 		}
 	}
@@ -56,7 +56,14 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 			'tahun_ajaran'	=> $this->input->post('tahun'),
 		);
 		$this->Model_kelas->ubahDataKelas($id, $data, $tabel);
-		$this->tampilKelas(); //Beda sama kyk yg di dppl, ganti dppl
+		
+		$data = $this->Model_kelas->tampilkelas();
+		$param = array(
+			'data' 	=> $data,
+		);
+		$this->load->view('headerAdmin');
+		$this->load->view('AKelas', $param);
+		$this->load->view('footer');
 	}
 
 	public function tambahKelas(){
@@ -67,7 +74,14 @@ class Controller_kelas extends CI_Controller { //ganti nama controller, bkn cont
 			'tahun_ajaran'	=> $this->input->post('tahun'),
 		);
 		$this->Model_kelas->tambahKelas($data, $tabel);
-		$this->tampilKelas();
+
+		$data = $this->Model_kelas->tampilkelas();
+		$param = array(
+			'data' 	=> $data,
+		);
+		$this->load->view('headerAdmin');
+		$this->load->view('AKelas', $param);
+		$this->load->view('footer');
 	}
 
 	public function tambahSiswaDalamKelas(){
