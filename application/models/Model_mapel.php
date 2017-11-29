@@ -7,7 +7,7 @@ class Model_mapel extends CI_Model{
 	}
 
 	function ambilDataMapel($id){
-		$query = $this->db->query("select * from mata_pelajaran where id_mata_pelajaran= '$id'");
+		$query = $this->db->query("select * from mata_pelajaran where id_mata_pelajaran = '$id'");
 		$result = $query->result();
 		return (count($result) > 0) ? $result[0] : false ;
 	}

@@ -20,14 +20,23 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('loginSiswa.php');
+		$param = array(
+			'login' => 'nofail',
+		);
+		$this->load->view('loginSiswa', $param);
 	}
 	public function loginAdmin()
 	{
-		$this->load->view('loginAdmin.php');
+		$param = array(
+			'login' => 'nofail',
+		);
+		$this->load->view('loginAdmin', $param);
 	}
 	public function loginWaliKelas()
 	{
-		$this->load->view('loginWaliKelas.php');
+		$param = array(
+			'login' => 'nofail',
+		);
+		$this->load->view('loginWaliKelas', $param);
 	}
 }

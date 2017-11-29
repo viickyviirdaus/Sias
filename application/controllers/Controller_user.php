@@ -15,10 +15,9 @@ class Controller_user extends CI_Controller {
 			$nip = $this->input->post('nip');
 			$password = $this->input->post('psw');
 			$where = array(
-				'nip' => $nip,
-				'password' => $password
+				'nip' 		=> $nip,
+				'password' 	=> $password
 				);
-			var_dump($where);
 			$data = $this->Model_user->loginAdmin("admin",$where)->result();
 			$cek = $this->Model_user->loginAdmin("admin",$where)->num_rows();
 			if($cek == 1){
@@ -32,24 +31,18 @@ class Controller_user extends CI_Controller {
 				$this->load->view('dashboardAdmin');
 				$this->load->view('footer');
 			}else{
-				// $param = array(
-				// 	'title' => 'Login',
-				// 	'pesan'	=> "Username dan Password Salah!",
-				// 	'status'=> $this->session->userdata('status'),
-				// 	'notifKomentar' => $this->modelKomentar->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// 	'notifPesan' => $this->modelPesan->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// );
+				$param = array(
+					'login' => 'fail',
+				);
 				
-				// $this->load->view('header', $param);
-				// $this->load->view('loginFail', $param);
-				// $this->load->view('footer');
+				$this->load->view('loginAdmin', $param);
 			}
 		} elseif ($status == 'siswa') {
 			$nis = $this->input->post('nis');
 			$password = $this->input->post('psw');
 			$where = array(
-				'nis' => $nis,
-				'password' => $password
+				'nis' 		=> $nis,
+				'password' 	=> $password
 				);
 			var_dump($where);
 			$data = $this->Model_user->loginSiswa("siswa",$where)->result();
@@ -63,24 +56,17 @@ class Controller_user extends CI_Controller {
 				$this->session->set_userdata($data_session);
 				$this->load->view('WMNilaiHarian');
 			}else{
-				// $param = array(
-				// 	'title' => 'Login',
-				// 	'pesan'	=> "Username dan Password Salah!",
-				// 	'status'=> $this->session->userdata('status'),
-				// 	'notifKomentar' => $this->modelKomentar->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// 	'notifPesan' => $this->modelPesan->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// );
-				
-				// $this->load->view('header', $param);
-				// $this->load->view('loginFail', $param);
-				// $this->load->view('footer');
+				$param = array(
+					'login' => 'fail',
+				);
+				$this->load->view('loginSiswa', $param);
 			}
 		} elseif ($status == 'waliKelas') {
 			$nip = $this->input->post('nip');
 			$password = $this->input->post('psw');
 			$where = array(
-				'nip' => $nip,
-				'password' => $password
+				'nip' 		=> $nip,
+				'password' 	=> $password
 				);
 			var_dump($where);
 			$data = $this->Model_user->loginWaliKelas("wali_kelas",$where)->result();
@@ -94,17 +80,11 @@ class Controller_user extends CI_Controller {
 				$this->session->set_userdata($data_session);
 				$this->load->view('WKDaftarSiswa');
 			}else{
-				// $param = array(
-				// 	'title' => 'Login',
-				// 	'pesan'	=> "Username dan Password Salah!",
-				// 	'status'=> $this->session->userdata('status'),
-				// 	'notifKomentar' => $this->modelKomentar->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// 	'notifPesan' => $this->modelPesan->belumBaca($this->session->userdata('id_member'))->num_rows(),
-				// );
+				$param = array(
+					'login' => 'fail',
+				);
 				
-				// $this->load->view('header', $param);
-				// $this->load->view('loginFail', $param);
-				// $this->load->view('footer');
+				$this->load->view('loginWaliKelas', $param);
 			}
 		}
 	}
@@ -113,14 +93,22 @@ class Controller_user extends CI_Controller {
 	public function logout(){
 		if ($this->session->userdata('status') == 'admin') {
 			$this->session->sess_destroy();
-			redirect(base_url('index.php/Welcome/loginAdmin'));
+			$param = array(
+				'login' => 'nofail',
+			);
+			$this->load->view('loginAdmin', $param);
 		} elseif ($this->session->userdata('status') == 'siswa') {
 			$this->session->sess_destroy();
-			redirect(base_url('index.php/Welcome/loginSiswa'));
+			$param = array(
+				'login' => 'nofail',
+			);
+			$this->load->view('loginSiswa', $param);
 		} elseif ($this->session->userdata('status') == 'waliKelas') {
 			$this->session->sess_destroy();
-			redirect(base_url('index.php/Welcome/loginWaliKelas'));
+			$param = array(
+				'login' => 'nofail',
+			);
+			$this->load->view('loginWaliKelas', $param);
 		}
-		
 	}
 }

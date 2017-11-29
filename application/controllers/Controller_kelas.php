@@ -30,19 +30,27 @@ class Controller_kelas extends CI_Controller {
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiKelas', $param);
 			$this->load->view('footer');
-		} elseif ($ket == 'dataSiswaMapel') {
+		} elseif ($ket == 'dataSiswa') {
 			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id);
+			$kelas = $this->Model_kelas->ambilDataKelas($id);
+			$param = array(
+				'id_kelas' => $id,
+				'nama_kelas' => $kelas->nama_kelas,
+				'siswa'	=> $siswa,
+			);
+			$this->load->view('headerAdmin');
+			$this->load->view('APerbaruiSiswaDalamKelas', $param);
+			$this->load->view('footer');
+		} elseif ($ket == 'dataMapel') {			
 			$mapel = $this->Model_kelas->ambilDataMapelDalamKelas($id);
 			$kelas = $this->Model_kelas->ambilDataKelas($id);
 			$param = array(
 				'id_kelas' => $id,
 				'nama_kelas' => $kelas->nama_kelas,
-				'cari'	=> false,
-				'siswa'	=> $siswa,
 				'mapel'	=> $mapel,
 			);
 			$this->load->view('headerAdmin');
-			$this->load->view('APerbaruiSiswaMapelDalamKelas', $param);
+			$this->load->view('APerbaruiMapelDalamKelas', $param);
 			$this->load->view('footer');
 		}
 	}
@@ -95,13 +103,13 @@ class Controller_kelas extends CI_Controller {
 			'tahun_ajaran' 	=> $kelas->tahun_ajaran
 		);
 		$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
+		$this->ambilDataKelas($id_kelas,'dataSiswa');
 	}
 
 	public function hapusSiswaDalamKelas($id_siswa,$id_kelas){
 		$tabel = 'anggota_kelas';
 		$this->Model_kelas->hapusSiswaDalamKelas($id_kelas, $id_siswa, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
+		$this->ambilDataKelas($id_kelas,'dataSiswa');
 	}
 
 	public function tambahMapelDalamKelas(){
@@ -113,12 +121,12 @@ class Controller_kelas extends CI_Controller {
 			'id_mata_pelajaran'		=> $mapel->id_mata_pelajaran
 		);
 		$this->Model_kelas->tambahMapelDalamKelas($data, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
+		$this->ambilDataKelas($id_kelas,'dataMapel');
 	}
 
 	public function hapusMapelDalamKelas($id_mata_pelajaran,$id_kelas){
 		$tabel = 'detail_mata_pelajaran';
 		$this->Model_kelas->hapusMapelDalamKelas($id_kelas, $id_mata_pelajaran, $tabel);
-		$this->ambilDataKelas($id_kelas,'dataSiswaMapel');
+		$this->ambilDataKelas($id_kelas,'dataMapel');
 	}
 }

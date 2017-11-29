@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
 
 </head>
-<body style="background: #282931">
+<body style="background: #282931" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -65,3 +65,9 @@
     </div>
 </body>
 </html>
+
+<script>
+function loginFail() {
+    alert("NIP atau Password yang anda masukkan salah!");
+}
+</script>

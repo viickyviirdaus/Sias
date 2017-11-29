@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
 
 </head>
-<body style="background: #16448e">
+<body style="background: #16448e" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -38,12 +38,12 @@
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center style="color: white;">Login Admin</center></h3></b>
               <div class="col-sm-12 input-sm " style="margin-top: 10px;">
-                <input type="text" class="form-control" name="nip" placeholder="Masukkan NIP">
+                <input type="text" class="form-control" name="nip" placeholder="Masukkan NIP" required>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12 input-sm">
-                <input type="password" class="form-control" name="psw" placeholder="Masukkan password">
+                <input type="password" class="form-control" name="psw" placeholder="Masukkan password" required>
               </div>
             </div>
             <center>
@@ -64,3 +64,9 @@
     </div>
 </body>
 </html>
+
+<script>
+function loginFail() {
+    alert("NIP atau Password yang anda masukkan salah!");
+}
+</script>

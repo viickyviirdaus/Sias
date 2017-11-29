@@ -24,8 +24,11 @@
 						<a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataKelas'); ?>">
 							<button class="btn btn-default" style="width: 130px">Ubah</button>
 						</a>
-                        <a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataSiswaMapel'); ?>">
-                            <button class="btn btn-default" style="width: 130px">Siswa dan Mata Pelajaran</button>
+                        <a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataSiswa'); ?>">
+                            <button class="btn btn-default" style="width: 130px">Daftar Siswa</button>
+                        </a>
+                        <a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataMapel'); ?>">
+                            <button class="btn btn-default" style="width: 130px">Daftar Mata Pelajaran</button>
                         </a>
 					</td>
 				</tr>
