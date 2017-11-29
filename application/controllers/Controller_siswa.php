@@ -17,7 +17,7 @@ class Controller_siswa extends CI_Controller {
 		);
 
 		$this->load->view('headerAdmin');
-		$this->load->view('ASiswaAktif', $param);//TampilSiswa
+		$this->load->view('ASiswaAktif', $param);
 		$this->load->view('footer');
 	}
 
@@ -28,24 +28,31 @@ class Controller_siswa extends CI_Controller {
 		);
 
 		$this->load->view('headerAdmin');
-		$this->load->view('ASiswaTidakAktif', $param);//TampilSiswaTidakAktif
+		$this->load->view('ASiswaTidakAktif', $param);
 		$this->load->view('footer');
 	}
 
-	public function nonaktifkanAkunSiswa($id){ //di dppl kurang ($id)
+	public function nonaktifkanAkunSiswa($id){
 		$this->Model_siswa->nonaktifkanAkunSiswa($id);
 
-		$this->tampilSiswaAktif();
+		$data = $this->Model_siswa->tampilSiswaAktif();
+		$param = array(
+			'data' 	=> $data,
+		);
+
+		$this->load->view('headerAdmin');
+		$this->load->view('ASiswaAktif', $param);
+		$this->load->view('footer');
 	}
 
-	public function ambilDataSiswa($nis){ //di dppl kurang ($id)
+	public function ambilDataSiswa($nis){
 		$data = $this->Model_siswa->ambilDataSiswa($nis);
 		$param = array(
 			'data' 	=> $data,
 		);
 
 		$this->load->view('headerAdmin');
-		$this->load->view('ABiodataSiswa', $param); //UbahDataSiswa
+		$this->load->view('ABiodataSiswa', $param);
 		$this->load->view('footer');
 	}
 
@@ -82,7 +89,14 @@ class Controller_siswa extends CI_Controller {
 
 		$this->Model_siswa->ubahDataSiswa($id, $data, $tabel);
 
-		$this->tampilSiswaAktif(); //Beda sama kyk yg di dppl, ganti dppl
+		$data = $this->Model_siswa->tampilSiswaAktif();
+		$param = array(
+			'data' 	=> $data,
+		);
+
+		$this->load->view('headerAdmin');
+		$this->load->view('ASiswaAktif', $param);
+		$this->load->view('footer');
 	}
 
 	public function tambahAkunSiswa(){

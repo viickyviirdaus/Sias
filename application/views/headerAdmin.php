@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				 <a class="navbar-brand" href="#">
-        			<img alt="Brand" src="<?php echo base_url('assets'); ?>/image/logoSias.png" style="max-height: 100%">
+        			<img alt="Brand" src="<?php echo base_url('assets'); ?>/image/logo.png" style="max-height: 100%">
       			</a>
 			</div>
 
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
+                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
                             <button type="batal" class="btn btn-success btn-block" id="closeModalWaliKelas">Batal</button>
                         </div>
                     </form>
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
+                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
                             <button type="batal" class="btn btn-success btn-block" id="closeModalSiswa">Batal</button>
                         </div>
                     </form>

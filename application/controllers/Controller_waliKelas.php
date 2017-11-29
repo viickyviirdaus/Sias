@@ -16,7 +16,7 @@ class Controller_waliKelas extends CI_Controller {
 			'data'		=> $data,
 		);
 		$this->load->view('headerAdmin');
-		$this->load->view('AWaliKelasAktif', $param);//TampilWaliKelas
+		$this->load->view('AWaliKelasAktif', $param);
 		$this->load->view('footer');
 	}
 
@@ -26,24 +26,30 @@ class Controller_waliKelas extends CI_Controller {
 			'data'		=> $data,
 		);
 		$this->load->view('headerAdmin');
-		$this->load->view('AWaliKelasTidakAktif', $param);//TampilWaliKelasTidakAktif
+		$this->load->view('AWaliKelasTidakAktif', $param);
 		$this->load->view('footer');
 	}
 
-	public function nonaktifkanAkunWaliKelas($id){ //di dppl kurang ($id)
+	public function nonaktifkanAkunWaliKelas($id){
 		$this->Model_waliKelas->nonaktifkanAkunWaliKelas($id);
 
-		$this->tampilWaliKelasAktif();
+		$data = $this->Model_waliKelas->tampilWaliKelasAktif();
+		$param = array(
+			'data'		=> $data,
+		);
+		$this->load->view('headerAdmin');
+		$this->load->view('AWaliKelasAktif', $param);
+		$this->load->view('footer');
 	}
 
-	public function ambilDataWaliKelas($id){ //di dppl kurang ($id)
+	public function ambilDataWaliKelas($id){
 		$data = $this->Model_waliKelas->ambilDataWaliKelas($id);
 		$param = array(
 			'data'		=> $data,
 		);
 		
 		$this->load->view('headerAdmin');
-		$this->load->view('ABiodataWaliKelas', $param); //UbahDataWaliKelas
+		$this->load->view('ABiodataWaliKelas', $param);
 		$this->load->view('footer');
 	}
 
@@ -61,7 +67,13 @@ class Controller_waliKelas extends CI_Controller {
 
 		$this->Model_waliKelas->ubahDataWaliKelas($id, $data, $tabel);
 
-		$this->tampilWaliKelasAktif(); //Beda sama kyk yg di dppl, ganti dppl
+		$data = $this->Model_waliKelas->tampilWaliKelasAktif();
+		$param = array(
+			'data'		=> $data,
+		);
+		$this->load->view('headerAdmin');
+		$this->load->view('AWaliKelasAktif', $param);
+		$this->load->view('footer');
 	}
 
 	public function tambahAkunWaliKelas(){
