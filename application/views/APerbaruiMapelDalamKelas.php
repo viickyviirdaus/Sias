@@ -47,6 +47,6 @@
 
 <script>
 function tidakAda() {
-    alert("Mata pelajaran yang anda cari tidak terdaftar");
+    alert("Mohon maaf, mata pelajaran yang anda cari tidak terdaftar atau sudah tersimpan di kelas ini.");
 }
 </script>

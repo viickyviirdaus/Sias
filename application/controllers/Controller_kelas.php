@@ -13,7 +13,7 @@ class Controller_kelas extends CI_Controller {
 	}
 
 	public function tampilKelas(){
-		$data = $this->Model_kelas->tampilkelas();
+		$data = $this->Model_kelas->tampilKelas();
 		$param = array(
 			'data' 	=> $data,
 		);
@@ -71,7 +71,7 @@ class Controller_kelas extends CI_Controller {
 
 		$this->Model_waliKelas->ubahDataKelasWaliKelas($this->input->post('id_wali_kelas'), $id_kelas);
 		
-		$data = $this->Model_kelas->tampilkelas();
+		$data = $this->Model_kelas->tampilKelas();
 		$param = array(
 			'data' 	=> $data,
 		);
@@ -89,7 +89,7 @@ class Controller_kelas extends CI_Controller {
 		);
 		$this->Model_kelas->tambahKelas($data, $tabel);
 
-		$data = $this->Model_kelas->tampilkelas();
+		$data = $this->Model_kelas->tampilKelas();
 		$param = array(
 			'data' 	=> $data,
 		);
@@ -102,7 +102,7 @@ class Controller_kelas extends CI_Controller {
 		$tabel = 'anggota_kelas';
 		$id_kelas = $this->input->post('id');
 		$kelas = $this->Model_kelas->ambilDataKelas($id_kelas);
-		$siswa = $this->Model_siswa->ambilDataSiswa($this->input->post('nis'));
+		$siswa = $this->Model_siswa->cekDataSiswa($this->input->post('nis'),$kelas->tahun_ajaran);
 		if ($siswa != false) {
 			$data = array(
 				'id_kelas' 		=> $id_kelas,
@@ -134,7 +134,7 @@ class Controller_kelas extends CI_Controller {
 	public function tambahMapelDalamKelas(){
 		$tabel = 'detail_mata_pelajaran';
 		$id_kelas = $this->input->post('id');
-		$mapel = $this->Model_mapel->ambilDataMapelByNama($this->input->post('mapel'));
+		$mapel = $this->Model_mapel->cekDataMapel($this->input->post('mapel'), $id_kelas);
 		if ($mapel != false) {
 			$data = array(
 				'id_kelas' 				=> $id_kelas,

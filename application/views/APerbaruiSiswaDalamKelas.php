@@ -46,6 +46,6 @@
 
 <script>
 function tidakAda() {
-    alert("Siswa yang anda cari tidak terdaftar");
+    alert("Mohon maaf, siswa yang anda cari tidak terdaftar atau sudah tersimpan pada suatu kelas atau merupakan siswa tidak aktif.");
 }
 </script>
