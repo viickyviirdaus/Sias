@@ -22,7 +22,7 @@ class Controller_siswa extends CI_Controller {
 	}
 
 	public function tampilSiswa($idKelas){
-		$data = $this->Model_siswa->getSiswa($idKelas);
+		$data = $this->Model_siswa->dataSiswa($idKelas);
 		$param = array(
 			'data' 	=> $data,
 			'idKelas' => $idKelas,

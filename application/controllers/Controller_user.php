@@ -108,7 +108,7 @@ class Controller_user extends CI_Controller {
 
 
 				$idKelas = $data[0]->id_kelas;
-				$data = $this->Model_siswa->getSiswa($idKelas);
+				$data = $this->Model_siswa->dataSiswa($idKelas);
 				$param = array(
 					'data' 	=> $data,
 					'idKelas' => $idKelas,
