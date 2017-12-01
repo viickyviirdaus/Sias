@@ -13,10 +13,12 @@ class Controller_rapor extends CI_Controller {
 		$data = $this->Model_nilai->lihatNilaiRapor($id, $idKelas);
 		$catatan = $data[0]->catatan;
 		$ratarata =0;
+		$pembagi = 0;
 		foreach ($data as $nilai) {
 			$ratarata += $nilai->nilai_akhir;
+			$pembagi++;
 		}
-		$ratarata = $ratarata/2;
+		$ratarata = $ratarata/$pembagi;
 		var_dump($ratarata);
 		$param = array(
 			'data' 	=> $data,
@@ -34,10 +36,12 @@ class Controller_rapor extends CI_Controller {
 		$data = $this->Model_nilai->lihatNilaiRapor($id, $idKelas);
 		$catatan = $data[0]->catatan;
 		$ratarata =0;
+		$pembagi = 0;
 		foreach ($data as $nilai) {
 			$ratarata += $nilai->nilai_akhir;
+			$pembagi++;
 		}
-		$ratarata = $ratarata/2;
+		$ratarata = $ratarata/$pembagi;
 		var_dump($ratarata);
 		$param = array(
 			'data' 	=> $data,
