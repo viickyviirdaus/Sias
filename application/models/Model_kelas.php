@@ -33,6 +33,11 @@ class Model_kelas extends CI_Model{
 
 	function tambahSiswaDalamKelas($data, $tabel){
 		$this->db->insert($tabel,$data);
+
+		//$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa join kelas on kelas.id_kelas = anggota_kelas.id_kelas where kelas.id_kelas = '$id'");
+
+		//$dataSiswa = $query->arr
+
 	}
 
 	function tambahMapelDalamKelas($data, $tabel){

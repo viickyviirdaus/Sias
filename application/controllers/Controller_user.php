@@ -95,10 +95,7 @@ class Controller_user extends CI_Controller {
 				'nip' 		=> $nip,
 				'password' 	=> $password
 				);
-<<<<<<< HEAD
-			// var_dump($where);
-=======
->>>>>>> 2171afa04a65cff49b448d82e3235a2ba84fec8c
+
 			$data = $this->Model_user->loginWaliKelas("wali_kelas",$where)->result();
 			$cek = $this->Model_user->loginWaliKelas("wali_kelas",$where)->num_rows();
 			if($cek == 1){
@@ -134,7 +131,6 @@ class Controller_user extends CI_Controller {
 		}
 	}
 
-
 	public function logout(){
 		var_dump($this->session->userdata('data_login'));
 		if ($this->session->userdata('status') == 'admin') {
@@ -145,14 +141,10 @@ class Controller_user extends CI_Controller {
 			$this->load->view('loginAdmin', $param);
 		} elseif ($this->session->userdata('status') == 'siswa') {
 			$this->session->sess_destroy();
-<<<<<<< HEAD
-			redirect(base_url('index.php/Welcome/'));
-=======
 			$param = array(
 				'login' => 'nofail',
 			);
 			$this->load->view('loginSiswa', $param);
->>>>>>> 2171afa04a65cff49b448d82e3235a2ba84fec8c
 		} elseif ($this->session->userdata('status') == 'waliKelas') {
 			$this->session->sess_destroy();
 			$param = array(
