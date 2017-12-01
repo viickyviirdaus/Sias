@@ -61,7 +61,6 @@ class Controller_waliKelas extends CI_Controller {
 		$data = array(
 			'nama'				=> $this->input->post('nama'),
 			'nip'				=> $this->input->post('nip'),
-			'id_kelas'			=> $this->input->post('kelas'),
 			'password'			=> $this->input->post('password'),
 		);
 

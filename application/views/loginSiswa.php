@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
 
 </head>
-<body style="background: #282931">
+<body style="background: #282931" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -38,7 +38,7 @@
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center style="color: white;">Login Siswa</center></h3></b>
               <div class="col-sm-12 input-sm " style="margin-top: 10px;">
-                <input type="text" class="form-control" name="nis" placeholder="Masukkan NISN" required>
+                <input type="text" class="form-control" name="nis" placeholder="Masukkan NIS" required>
               </div>
             </div>
             <div class="form-group">
@@ -64,3 +64,9 @@
     </div>
 </body>
 </html>
+
+<script>
+function loginFail() {
+    alert("NIS atau Password yang anda masukkan salah!");
+}
+</script>

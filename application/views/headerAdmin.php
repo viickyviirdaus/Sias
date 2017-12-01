@@ -91,10 +91,6 @@
                                 <label for="psw">Password</label>
                                 <input name="psw" type="text" class="form-control" id="psw" required>
                             </div>
-                            <div class="form-group">
-                                <label for="kelas">Kelas yang diampu</label>
-                                <input name="kelas" type="text" class="form-control" id="kelas" required>
-                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
