@@ -21,6 +21,19 @@ class Controller_siswa extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function tampilSiswa($idKelas){
+		$data = $this->Model_siswa->getSiswa($idKelas);
+		$param = array(
+			'data' 	=> $data,
+			'idKelas' => $idKelas,
+			'data_login' =>  $this->session->userdata('data_login'),
+		);
+
+		$this->load->view('headerWali');
+		$this->load->view('WKDaftarSiswa', $param);
+		$this->load->view('footer');
+	}
+
 	public function tampilSiswaTidakAktif(){
 		$data = $this->Model_siswa->tampilSiswaTidakAktif();
 		$param = array(

@@ -1,8 +1,10 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Nilai Siswa</h3>
-		<h5 style="text-align: left; padding-left: 170px; padding-top: 30px">Nama Wali Kelas</h5>
-		<button class="btn btn-default" style="margin-left: 900px; width: 100px;">Rapor</button>
+		<h5 style="text-align: left; padding-left: 170px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
+		<form action="<?php echo base_url('index.php/Controller_rapor/tampilRapor/'.$idSiswa.'/'.$idKelas); ?>">
+			<button class="btn btn-default" style="margin-left: 900px; width: 100px;">Rapor</button>
+		</form>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
 			<thead>	
 				<tr>	
@@ -15,14 +17,17 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1;
+				foreach ($data as $nilai): ?>
 				<tr style="text-align: left;">
-					<td class="text-center" >1</td>
-					<td class="text-left" >Matematika</td>
-					<td class="text-center" >80</td>
-					<td class="text-center" >80</td>
-					<td class="text-center" >80</td>
-					<td class="text-center" >80</td>
-				</tr>				
+					<td class="text-center" style=""><?php echo $no; $no++; ?></td>
+					<td class="text-left" style=""><?php echo $nilai->nama_mata_pelajaran ?></td>
+					<td class="text-center" style=""><?php if($nilai->tugas1 >0){echo $nilai->tugas1;} else {echo "Belum Ada";} ?></td>
+					<td class="text-center" style=""><?php if($nilai->tugas2 >0){echo $nilai->tugas2;} else {echo "Belum Ada";} ?></td>
+					<td class="text-center" style=""><?php if($nilai->uts >0){echo $nilai->uts;} else {echo "Belum Ada";} ?></td>
+					<td class="text-center" style=""><?php if($nilai->uas >0){echo $nilai->uas;} else {echo "Belum Ada";} ?></td>
+				</tr>
+				<?php endforeach ?>						
 			</tbody>
 		</table>
 	</div>

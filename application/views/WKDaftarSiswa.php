@@ -1,23 +1,30 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Siswa Kelas</h3>
-		<h5 style="text-align: left; padding-left: 170px; padding-top: 30px">Nama Wali Kelas</h5>
+		<h5 style="text-align: left; padding-left: 110px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
 		<table class="table table-bordered" style="width: 1000px" align="center">
 			<thead>	
 				<tr>	
-					<th>No</th>
-					<th>Nama</th>
-					<th>NIS</th>
-					<th>Action</th>
+					<th class="text-center">No</th>
+					<th class="text-center">Nama</th>
+					<th class="text-center">NIS</th>
+					<th class="text-center">Action</th>
 				</tr>
 			</thead>
 			<tbody>
+			<?php $no = 1;
+				foreach ($data as $siswa): ?>
 				<tr style="text-align: left;">
-					<td>1</td>
-					<td>Abdullah Andi Syaifullah</td>
-					<td>155150200111640</td>
-					<td><button class="btn btn-default">Lihat Nilai</button></td>
-				</tr>				
+					<td class="text-center"><?php echo $no; $no++ ?></td>
+					<td><?php echo $siswa->nama_siswa ?></td>
+					<td class="text-center"><?php echo $siswa->nis ?></td>
+					<td class="text-center">
+						<form action="<?php echo base_url('index.php/Controller_nilai/tampilSemuaNilai/'.$siswa->id_siswa.'/'.$idKelas); ?>">
+							<button type="submit" class="btn btn-default" style="width: 130px; ">Lihat Nilai</button>
+						</form>
+					</td>
+				</tr>	
+			<?php endforeach ?>			
 			</tbody>
 		</table>
 	</div>

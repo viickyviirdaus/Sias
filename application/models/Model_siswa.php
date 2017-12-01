@@ -29,4 +29,9 @@ class Model_siswa extends CI_Model{
 	function tambahAkunSiswa($data, $tabel){
 		$this->db->insert($tabel,$data);
 	}
+
+	function getSiswa($idKelas){
+		$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa where anggota_kelas.id_kelas = $idKelas ");
+			return $query->result();
+	}
 }
