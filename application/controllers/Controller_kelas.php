@@ -110,6 +110,7 @@ class Controller_kelas extends CI_Controller {
 				'tahun_ajaran' 	=> $kelas->tahun_ajaran
 			);
 			$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
+
 			$this->ambilDataKelas($id_kelas,'dataSiswa');
 		} else if ($siswa == false) {
 			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id_kelas);

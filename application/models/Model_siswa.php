@@ -30,11 +30,6 @@ class Model_siswa extends CI_Model{
 		$this->db->insert($tabel,$data);
 	}
 
-<<<<<<< HEAD
-	function getSiswa($idKelas){
-		$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa where anggota_kelas.id_kelas = $idKelas ");
-			return $query->result();
-=======
 	function cekDataSiswa($nis, $tahun_ajaran){
 		$query = $this->db->query("select * from siswa join anggota_kelas on siswa.id_siswa = anggota_kelas.id_siswa where siswa.nis = '$nis' and anggota_kelas.tahun_ajaran = '$tahun_ajaran' and siswa.status = 'aktif'");
 		$result = $query->result();
@@ -45,6 +40,5 @@ class Model_siswa extends CI_Model{
 			$result = $query->result();
 			return (count($result) > 0) ? $result[0] : false ;
 		}
->>>>>>> 2171afa04a65cff49b448d82e3235a2ba84fec8c
 	}
 }
