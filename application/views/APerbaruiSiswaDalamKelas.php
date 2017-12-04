@@ -19,7 +19,7 @@
 					<td class="text-left" ><?php echo $dataSiswa->nama_siswa; ?></td>
 					<td class="text-center" ><?php echo $dataSiswa->nis; ?></td>
 					<td class="text-center" >
-					<form action="<?php echo base_url('index.php/Controller_kelas/hapusSiswaDalamKelas/'.$dataSiswa->id_siswa.'/'.$id_kelas); ?>" onsubmit="return confirm('Apakah anda yakin ingin menghapus <?php echo $dataSiswa->nama_siswa; ?> pada <?php echo $nama_kelas; ?>');">
+					<form action="<?php echo base_url('index.php/Controller_kelas/hapusSiswaDalamKelas/'.$dataSiswa->id_siswa.'/'.$id_kelas.'/'.$tahun_ajaran); ?>" onsubmit="return confirm('Apakah anda yakin ingin menghapus <?php echo $dataSiswa->nama_siswa; ?> pada <?php echo $nama_kelas; ?>');">
 						<button type="submit" class="btn btn-danger">Hapus</button>
 					</form>
 						

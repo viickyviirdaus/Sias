@@ -28,7 +28,8 @@ class Welcome extends CI_Controller {
 	public function loginAdmin()
 	{
 		$param = array(
-			'login' => 'nofail',
+			'login' 	=> 'nofail',
+			'buatAkun' 	=> 'tidak'
 		);
 		$this->load->view('loginAdmin', $param);
 	}

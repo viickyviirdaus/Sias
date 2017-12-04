@@ -10,12 +10,11 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets'); ?>/css/cssnyatemplate.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets'); ?>/css/bootstrap.min.css">
   <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery-3.2.1.slim.min.js"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/bootstrap.js"></script>
   <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/popper.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
-
 </head>
-<body style="background: #16448e" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
+<body style="background: #16448e" <?php if ($login == "fail"){ echo "onload=loginFail()";} if ($buatAkun == "ya"){ echo "onload=buatAkunSukses()";} ?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -38,7 +37,7 @@
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center style="color: white;">Login Admin</center></h3></b>
               <div class="col-sm-12 input-sm " style="margin-top: 10px;">
-                <input type="text" class="form-control" name="nip" placeholder="Masukkan NIP" required>
+                <input id="nip" type="text" class="form-control" name="nip" placeholder="Masukkan NIP" required>
               </div>
             </div>
             <div class="form-group">
@@ -48,8 +47,9 @@
             </div>
             <center>
               <div class="form-group">
-                  <button type="submit" class="btn btn-default">Login</button>
+                  <button type="submit" onsubmit="return validasiLogin()" class="btn btn-default">Login</button>
               </div>
+              <a href="#" id="buatAkunAdmin">Buat Akun Admin</a>
             </center>
           </form>
         </div>
@@ -63,10 +63,103 @@
       <h4 class="text-center" style="vertical-align: center; color: white"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 Kelompok 7</h4>
     </div>
 </body>
+
+<!-- Modal -->
+        <div class="modal fade" id="modalBuatAkunAdmin" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content" id="formBody">
+                    <div class="modal-header" id="formHeader">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 align="left"></span>Buat Akun Admin</h4>
+                    </div>
+
+                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_user/tambahAkunAdmin'); ?>">
+                        <div class="modal-body" style="padding:20px 50px;">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input name="nama" type="text" class="form-control" id="nama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nip">NIP</label>
+                                <input name="nip" type="text" class="form-control" id="nip" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="psw">Password</label>
+                                <input name="psw" type="password" class="form-control" id="psw" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" onsubmit="validasiBuat()" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
+                            <button type="batal" class="btn btn-success btn-block" id="closeModalAdmin">Batal</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
 </html>
 
 <script>
 function loginFail() {
     alert("NIP atau Password yang anda masukkan salah!");
 }
+function buatAkunSukses() {
+    alert("Akun admin baru telah dibuat.");
+}
+            $(document).ready(function () {
+                $("#buatAkunAdmin").click(function () {
+                    $("#modalBuatAkunAdmin").modal();
+                });
+            });
+
+            $(document).ready(function () {
+                $('#closeModalAdmin').click(function() {
+                    $('#modalBuatAkunAdmin').modal('hide');
+                });
+            });
+
+// function valNama(nilai, pesan) {
+//   var namaExp = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;
+//   if(nilai.value.match(namaExp)) {
+//     return true;
+//   }
+//   else {
+//     alert(pesan);
+//     nilai.focus();
+//     return false;
+//   }
+// }
+
+// function validasiLogin() {
+//   var nipExp = /^[0-9]{11}+$/;
+//   if(document.getElementById('nip').value.match(nipExp)) {
+//     return true;
+//   }
+//   else {
+//     alert("NIP harus berisi angka dengan 11 karakter");
+//     return false;
+//   }
+// }
+
+// function valPsw(nilai, pesan) {
+//   var pswExp = /^[0-9]+$/;
+//   if(nilai.value.match(pswExp)) {
+//     return true;
+//   }
+//   else {
+//     alert(pesan);
+//     nilai.focus();
+//     return false;
+//   }
+// }
+
+// function validasiBuat() {
+//   valNama(document.getElementById('nama'), 'Nama hanya berisi huruf alphabet');
+//   valNip(document.getElementById('nip'), 'NIP harus berisi angka dengan 11 karakter');
+//   valPsw(document.getElementById('psw'), 'Pass harus berisi angka dan maksimal berisi 11 karakter');
+// }
 </script>
+
+

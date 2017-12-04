@@ -96,7 +96,7 @@ class Controller_siswa extends CI_Controller {
 			'nama_siswa'		=> $this->input->post('nama'),
 			'nis'				=> $this->input->post('nis'),
 			'jenis_kelamin'		=> $this->input->post('jk'),
-			'password'			=> $this->input->post('password'),
+			'password'			=> md5($this->input->post('password')),
 			'foto'				=> $file_name
 		);
 
@@ -114,7 +114,7 @@ class Controller_siswa extends CI_Controller {
 
 	public function tambahAkunSiswa(){
 		$config['upload_path'] = './uploads/';
-		$config['file_name']   = 'foto';
+		$config['file_name']   = $this->input->post('nis');
 		$config['allowed_types']  = 'jpeg|gif|jpg|png';
  
 		$this->load->library('upload', $config);
@@ -137,14 +137,16 @@ class Controller_siswa extends CI_Controller {
 			'nis'				=> $this->input->post('nis'),
 			'nisn'				=> $this->input->post('nisn'),
 			'jenis_kelamin'		=> $this->input->post('jk'),
-			'password'			=> $this->input->post('psw'),
+			'password'			=> md5($this->input->post('psw')),
 			'foto'				=> $file_name,
 			'status'			=> 'aktif'
 		);
 		$this->Model_siswa->tambahAkunSiswa($data, $tabel);
-		
+		$param = array(
+			'buatAkun'		=> "ya",
+		);
 		$this->load->view('headerAdmin');
-		$this->load->view('dashboardAdmin');
+		$this->load->view('dashboardAdmin', $param);
 		$this->load->view('footer');
 	}
 }

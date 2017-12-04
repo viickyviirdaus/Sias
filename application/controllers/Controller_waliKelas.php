@@ -61,7 +61,7 @@ class Controller_waliKelas extends CI_Controller {
 		$data = array(
 			'nama'				=> $this->input->post('nama'),
 			'nip'				=> $this->input->post('nip'),
-			'password'			=> $this->input->post('password'),
+			'password'			=> md5($this->input->post('password')),
 		);
 
 		$this->Model_waliKelas->ubahDataWaliKelas($id, $data, $tabel);
@@ -80,14 +80,16 @@ class Controller_waliKelas extends CI_Controller {
 		$data = array(
 			'nama'		=> $this->input->post('nama'),
 			'nip'		=> $this->input->post('nip'),
-			'password'	=> $this->input->post('psw'),
-			'id_kelas'	=> $this->input->post('kelas'),
+			'password'	=> md5($this->input->post('psw')),
 			'status'	=> 'aktif'
 		);
 
-		$this->Model_waliKelas->tambahAkunaWaliKelas($data, $tabel);
+		$this->Model_waliKelas->tambahAkunWaliKelas($data, $tabel);
+		$param = array(
+			'buatAkun'		=> "ya",
+		);
 		$this->load->view('headerAdmin');
-		$this->load->view('dashboardAdmin');
+		$this->load->view('dashboardAdmin', $param);
 		$this->load->view('footer');
 	}
 }

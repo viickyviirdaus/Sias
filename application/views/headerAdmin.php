@@ -9,7 +9,7 @@
     <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/bootstrap.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" style="height: 60px">
+	<nav class="navbar navbar-default navbar-fixed-top" style="height: 60px;">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="" s="navbar-header" style="padding-top: 5px;">
@@ -89,7 +89,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="psw">Password</label>
-                                <input name="psw" type="text" class="form-control" id="psw" required>
+                                <input name="psw" type="password" class="form-control" id="psw" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -134,13 +134,13 @@
                             <div class="form-group">
                                 <label for="jk"></span>Jenis Kelamin</label>
                                 <select name="jk" required>
-                                   <option value="L">L</option>
-                                   <option value="P">P</option>
+                                   <option value="L">Laki-Laki</option>
+                                   <option value="P">Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="psw"></span> Password</label>
-                                <input name="psw" type="text" class="form-control" id="psw" required>
+                                <input name="psw" type="password" class="form-control" id="psw" required>
                             </div>
                         </div>
                         <div class="modal-footer">

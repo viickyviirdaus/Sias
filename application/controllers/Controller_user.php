@@ -15,7 +15,7 @@ class Controller_user extends CI_Controller {
 	public function login($status){
 		if ($status == 'admin') {
 			$nip = $this->input->post('nip');
-			$password = $this->input->post('psw');
+			$password = md5($this->input->post('psw'));
 			$where = array(
 				'nip' 		=> $nip,
 				'password' 	=> $password
@@ -25,23 +25,26 @@ class Controller_user extends CI_Controller {
 			if($cek == 1){
 				$data_session = array(
 					'nama'		=> $data[0]->nama,
-					'id_member' => $data[0]->id_admin,
+					'id_admin' => $data[0]->id_admin,
 					'status' 	=> "admin"
 				);
 				$this->session->set_userdata($data_session);
+				$param = array(
+					'buatAkun'		=> "tidak",
+				);
 				$this->load->view('headerAdmin');
-				$this->load->view('dashboardAdmin');
+				$this->load->view('dashboardAdmin',$param);
 				$this->load->view('footer');
 			}else{
 				$param = array(
-					'login' => 'fail',
+					'login' 	=> 'fail',
+					'buatAkun' 	=> 'tidak'
 				);
-				
 				$this->load->view('loginAdmin', $param);
 			}
 		} elseif ($status == 'siswa') {
 			$nis = $this->input->post('nis');
-			$password = $this->input->post('psw');
+			$password = md5($this->input->post('psw'));
 			$id_kelas = 0;
 			$cek = 0;
 			$where = array(
@@ -90,7 +93,7 @@ class Controller_user extends CI_Controller {
 			}
 		} elseif ($status == 'waliKelas') {
 			$nip = $this->input->post('nip');
-			$password = $this->input->post('psw');
+			$password = md5($this->input->post('psw'));
 			$where = array(
 				'nip' 		=> $nip,
 				'password' 	=> $password
@@ -132,11 +135,11 @@ class Controller_user extends CI_Controller {
 	}
 
 	public function logout(){
-		var_dump($this->session->userdata('data_login'));
 		if ($this->session->userdata('status') == 'admin') {
 			$this->session->sess_destroy();
 			$param = array(
-				'login' => 'nofail',
+				'login' 	=> 'nofail',
+				'buatAkun' 	=> 'tidak'
 			);
 			$this->load->view('loginAdmin', $param);
 		} elseif ($this->session->userdata('status') == 'siswa') {
@@ -151,6 +154,24 @@ class Controller_user extends CI_Controller {
 				'login' => 'nofail',
 			);
 			$this->load->view('loginWaliKelas', $param);
+		} else {
+			var_dump($this->session->userdata('data_login'));
+			var_dump("Login sebagai siapa hayoo ???");
 		}
+	}
+
+	public function tambahAkunAdmin(){
+		$tabel = 'admin';
+		$data = array(
+			'nama'		=> $this->input->post('nama'),
+			'nip'		=> $this->input->post('nip'),
+			'password'	=> md5($this->input->post('psw')),
+		);
+		$this->Model_user->tambahAkunAdmin($data, $tabel);
+		$param = array(
+				'login' 	=> 'nofail',
+				'buatAkun' 	=> 'ya'
+			);
+		$this->load->view('loginAdmin', $param);
 	}
 }

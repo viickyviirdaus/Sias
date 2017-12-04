@@ -42,7 +42,7 @@ class Model_waliKelas extends CI_Model{
 		}
 	}
 
-	function tambahAkunaWaliKelas($data, $tabel){
+	function tambahAkunWaliKelas($data, $tabel){
 		$this->db->insert($tabel,$data);
 	}
 }

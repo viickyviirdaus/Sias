@@ -1,7 +1,7 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Lihat Akun Siswa Aktif</h3>
-		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
+		<table class="table table-bordered" style="width: 1100px; margin-top: 15px" align="center">
 			<thead>	
 				<tr>	
 					<th class="text-center" style="width: 50px">No</th>
@@ -9,6 +9,7 @@
 					<th class="text-center" style="width: 80px">NIS</th>
 					<th class="text-center" style="width: 120px">NISN</th>
 					<th class="text-center" style="width: 120px">Kelas</th>
+					<th class="text-center" style="width: 120px">Tahun Ajaran</th>
 					<th class="text-center">Action</th>
 				</tr>
 			</thead>
@@ -21,6 +22,7 @@
 					<td class="text-center" style="padding-top: 16px"><?php echo $akun->nis; ?></td>
 					<td class="text-center" style="padding-top: 16px"><?php echo $akun->nisn; ?></td>
 					<td class="text-center" style="padding-top: 16px"><?php echo $akun->nama_kelas; ?></td>
+					<td class="text-center" style="padding-top: 16px"><?php echo $akun->tahun_ajaran; ?></td>
 					<td class="text-center">
 						<div class="row" style="padding-left: 53px; padding-right: 65px">
 							<div class="col-md-6" style="margin-top: 2px">

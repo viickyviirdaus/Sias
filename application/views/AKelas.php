@@ -6,7 +6,7 @@
 			<thead>	
 				<tr>	
 					<th class="text-center">No</th>
-					<th style="width: 300px" class="text-center">Nama Kelas</th>
+					<th style="width: 150px" class="text-center">Nama Kelas</th>
 					<th style="width: 120px" class="text-center">Ruang Kelas</th>
                     <th style="width: 120px" class="text-center">Tahun Ajaran</th>
 					<th class="text-center">Action</th>
@@ -28,7 +28,7 @@
                             <button class="btn btn-default" style="width: 130px">Daftar Siswa</button>
                         </a>
                         <a href="<?php echo base_url('index.php/Controller_kelas/ambilDataKelas/'.$kelas->id_kelas.'/dataMapel'); ?>">
-                            <button class="btn btn-default" style="width: 130px">Daftar Mata Pelajaran</button>
+                            <button class="btn btn-default" style="width: 130px">Daftar Pelajaran</button>
                         </a>
 					</td>
 				</tr>

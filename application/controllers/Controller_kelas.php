@@ -40,6 +40,7 @@ class Controller_kelas extends CI_Controller {
 				'id_kelas' 		=> $id,
 				'nama_kelas'	=> $kelas->nama_kelas,
 				'siswa'			=> $siswa,
+				'tahun_ajaran' 	=> $kelas->tahun_ajaran
 			);
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiSiswaDalamKelas', $param);
@@ -109,8 +110,7 @@ class Controller_kelas extends CI_Controller {
 				'id_siswa'		=> $siswa->id_siswa,
 				'tahun_ajaran' 	=> $kelas->tahun_ajaran
 			);
-			$this->Model_kelas->tambahSiswaDalamKelas($data, $tabel);
-
+			$this->Model_kelas->tambahSiswaDalamKelas($siswa->id_siswa, $id_kelas, $kelas->tahun_ajaran);
 			$this->ambilDataKelas($id_kelas,'dataSiswa');
 		} else if ($siswa == false) {
 			$siswa = $this->Model_kelas->ambilDataSiswaDalamKelas($id_kelas);
@@ -119,6 +119,7 @@ class Controller_kelas extends CI_Controller {
 				'id_kelas' 		=> $id_kelas,
 				'nama_kelas' 	=> $kelas->nama_kelas,
 				'siswa'			=> $siswa,
+				'tahun_ajaran' 	=> $kelas->tahun_ajaran
 			);
 			$this->load->view('headerAdmin');
 			$this->load->view('APerbaruiSiswaDalamKelas', $param);
@@ -126,9 +127,8 @@ class Controller_kelas extends CI_Controller {
 		}
 	}
 
-	public function hapusSiswaDalamKelas($id_siswa,$id_kelas){
-		$tabel = 'anggota_kelas';
-		$this->Model_kelas->hapusSiswaDalamKelas($id_kelas, $id_siswa, $tabel);
+	public function hapusSiswaDalamKelas($id_siswa,$id_kelas,$tahun_ajaran){
+		$this->Model_kelas->hapusSiswaDalamKelas($id_kelas, $id_siswa, $tahun_ajaran);
 		$this->ambilDataKelas($id_kelas,'dataSiswa');
 	}
 
@@ -156,7 +156,6 @@ class Controller_kelas extends CI_Controller {
 			$this->load->view('APerbaruiMapelDalamKelas', $param);
 			$this->load->view('footer');
 		}
-		
 	}
 
 	public function hapusMapelDalamKelas($id_mata_pelajaran,$id_kelas){
