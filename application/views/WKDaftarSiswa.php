@@ -1,6 +1,6 @@
 <div class="body" style="min-height: 555px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
-		<h3>Daftar Siswa Kelas</h3>
+		<h3>Daftar Siswa</h3>
 		<h5 style="text-align: left; padding-left: 110px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
 		<table class="table table-bordered" style="width: 1000px" align="center">
 			<thead>	
