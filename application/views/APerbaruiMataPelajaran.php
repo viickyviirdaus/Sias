@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 150px;">
 		<h3>Perbarui Mata Pelajaran</h3>
 

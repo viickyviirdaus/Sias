@@ -1,10 +1,10 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Kelas</h3>
 		<a href="#" id="tambahKelas" class="btn btn-default" style="margin-left: 850px; width: 150px; color: blue"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Tambah Kelas</a>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th class="text-center">No</th>
 					<th style="width: 150px" class="text-center">Nama Kelas</th>
 					<th style="width: 120px" class="text-center">Ruang Kelas</th>
@@ -14,7 +14,7 @@
 			</thead>
 			<tbody>
 				<?php $no = 1;
-				foreach ($data as $kelas): ?>	
+				foreach ($data as $kelas): ?>
 				<tr style="text-align: left;">
 					<td class="text-center" style="padding-top: 15px"><?php echo $no; $no++; ?></td>
 					<td class="text-left" style="padding-top: 15px"><?php echo $kelas->nama_kelas; ?></td>
@@ -32,7 +32,7 @@
                         </a>
 					</td>
 				</tr>
-				<?php endforeach ?>				
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>
@@ -64,16 +64,18 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
-                            <button type="batal" class="btn btn-success btn-block" id="closeModalKelas">Batal</button>
+													<div class="btn-group">
+                            <button type="submit" class="button" id="formSubmit">Simpan</button>
+                            <button type="batal" class="button" id="closeModalKelas">Batal</button>
+													</div>
                         </div>
                     </form>
-                    
-                    
+
+
                 </div>
 
             </div>
-        </div> 
+        </div>
 
         <script>
             $(document).ready(function () {

@@ -1,10 +1,10 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Mata Pelajaran</h3>
 		<a href="#" id="tambahMapel" class="btn btn-default" style="margin-left: 800px; width: 200px; color: blue"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Tambah Mata Pelajaran </a>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th class="text-center">No</th>
 					<th style="width: 300px" class="text-center">Nama Mata Pelajaran</th>
 					<th style="width: 120px" class="text-center">KKM</th>
@@ -13,7 +13,7 @@
 			</thead>
 			<tbody>
 				<?php $no = 1;
-				foreach ($data as $mapel): ?>	
+				foreach ($data as $mapel): ?>
 				<tr style="text-align: left;">
 					<td class="text-center" style="padding-top: 15px"><?php echo $no; $no++; ?></td>
 					<td class="text-left" style="padding-top: 15px"><?php echo $mapel->nama_mata_pelajaran; ?></td>
@@ -24,7 +24,7 @@
 						</a>
 					</td>
 				</tr>
-				<?php endforeach ?>				
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>
@@ -52,16 +52,18 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Simpan</button>
-                            <button type="batal" class="btn btn-success btn-block" id="closeModalMapel">Batal</button>
+													<div class="btn-group">
+                            <button type="submit" class="button" id="formSubmit">Simpan</button>
+                            <button type="batal" class="button" id="closeModalMapel">Batal</button>
+													</div>
                         </div>
                     </form>
-                    
-                    
+
+
                 </div>
 
             </div>
-        </div> 
+        </div>
 
         <script>
             $(document).ready(function () {

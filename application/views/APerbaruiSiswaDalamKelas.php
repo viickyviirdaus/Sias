@@ -1,10 +1,11 @@
+<div class="body" style="min-height: 600px">
 <body <?php if ($keberadaan == false){ echo "onload=tidakAda()";}?>>
 		<h3 align="center" style="margin-left: 105px; margin-top: 80px;"><?php echo $nama_kelas; ?></h3>
 		<h3 style="margin-left: 105px; margin-top: 10px;">Daftar Siswa</h3>
 		<div class="row" style="padding-right: 600px; padding-left: 120px">
 			<table class="table table-bordered" style=" margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th class="text-center">No</th>
 					<th class="text-center">Nama</th>
 					<th class="text-center">NIS</th>
@@ -22,10 +23,10 @@
 					<form action="<?php echo base_url('index.php/Controller_kelas/hapusSiswaDalamKelas/'.$dataSiswa->id_siswa.'/'.$id_kelas.'/'.$tahun_ajaran); ?>" onsubmit="return confirm('Apakah anda yakin ingin menghapus <?php echo $dataSiswa->nama_siswa; ?> pada <?php echo $nama_kelas; ?>');">
 						<button type="submit" class="btn btn-danger">Hapus</button>
 					</form>
-						
+
 					</td>
 				</tr>
-				<?php endforeach ?>				
+				<?php endforeach ?>
 			</tbody>
 			</table>
 		</div>
@@ -43,6 +44,7 @@
 			</div>
 		</form>
 </body>
+</div>
 
 <script>
 function tidakAda() {

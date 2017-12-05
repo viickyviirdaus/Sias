@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/font-awesome-4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="<?php echo base_url('assets'); ?>/jquery/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/bootstrap.js"></script>
+		<style>
+		.btn-group .button {
+		    background-color: #8d8d8d;
+				margin-right: 8px;
+		    color: white;
+		    padding: 10px 24px;;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 14px;
+		    cursor: pointer;
+		    float: right;
+				border-radius: 10px;
+				border-color: black;
+			}
+		.btn-group .button:hover{
+			background-color: white;
+			color: black;
+		}
+		img {
+    display: block;
+    margin: 0 auto;
+		}
+		</style>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" style="height: 60px;">
+	<nav class="navbar navbar-default navbar-fixed-top" style="height: 60px; background: #efefef;">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="" s="navbar-header" style="padding-top: 5px;">
@@ -74,7 +98,7 @@
                 <div class="modal-content" id="formBody">
                     <div class="modal-header" id="formHeader">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 align="left"></span>Buat Akun Wali Kelas</h4>
+                        <h4 align="center"></span>Buat Akun Wali Kelas</h4>
                     </div>
 
                     <form role="form" method="post" action="<?php echo base_url('index.php/Controller_waliKelas/tambahAkunWaliKelas'); ?>">
@@ -93,8 +117,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
-                            <button type="batal" class="btn btn-success btn-block" id="closeModalWaliKelas">Batal</button>
+													<div class="btn-group">
+														<button type="submit" class="button" id="formSubmit">Buat Akun</button>
+                            <button type="batal" class="button" id="closeModalWaliKelas">Batal</button>
+													</div>
                         </div>
                     </form>
                 </div>
@@ -110,9 +136,9 @@
                 <div class="modal-content" id="formBody">
                     <div class="modal-header" id="formHeader">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 align="left"></span>Buat Akun Siswa</h4>
+                        <h4 align="center"></span>Buat Akun Siswa</h4>
                     </div>
-                    <img align="center" src="<?php echo base_url('assets/image/avatar.jpg') ?>" class="img-responsive" style="max-width: 12%; padding-top: 10px" alt="Image">
+                    <img src="<?php echo base_url('assets/image/avatar.jpg') ?>" class="img-responsive" style="max-width: 12%; padding-top: 10px" alt="Image">
                     <p align="center">Unggah Foto</p>
                     <form enctype="multipart/form-data" role="form" method="post" action="<?php echo base_url('index.php/Controller_siswa/tambahAkunSiswa'); ?>">
                         <div class="modal-body" style="padding:20px 50px;">
@@ -144,8 +170,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
-                            <button type="batal" class="btn btn-success btn-block" id="closeModalSiswa">Batal</button>
+													<div class="btn-group">
+                            <button type="submit" class="button" id="formSubmit">Buat Akun</button>
+                            <button type="batal" class="button" id="closeModalSiswa">Batal</button>
+													</div>
                         </div>
                     </form>
 

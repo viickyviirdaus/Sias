@@ -1,9 +1,9 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Lihat Akun Siswa Aktif</h3>
 		<table class="table table-bordered" style="width: 1100px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th class="text-center" style="width: 50px">No</th>
 					<th class="text-center" style="width: 250px">Nama</th>
 					<th class="text-center" style="width: 80px">NIS</th>
@@ -26,9 +26,9 @@
 					<td class="text-center">
 						<div class="row" style="padding-left: 53px; padding-right: 65px">
 							<div class="col-md-6" style="margin-top: 2px">
-								<a href="<?php echo base_url('index.php/Controller_siswa/ambilDataSiswa/'.$akun->nis); ?>">						
+								<a href="<?php echo base_url('index.php/Controller_siswa/ambilDataSiswa/'.$akun->nis); ?>">
 									<button class="btn btn-default" style="width: 110px ">Ubah Biodata</button>
-								</a>		
+								</a>
 							</div>
 							<div class="col-md-6" style="margin-top: 2px">
 								<form action="<?php echo base_url('index.php/Controller_siswa/nonaktifkanAkunSiswa/'.$akun->id_siswa); ?>" onsubmit="return confirm('Apakah anda yakin ingin menonaktifkan akun <?php echo $akun->nama_siswa; ?>');">
@@ -36,10 +36,10 @@
 								</form>
 
 							</div>
-						</div>						
+						</div>
 					</td>
 				</tr>
-				<?php endforeach ?>				
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>
