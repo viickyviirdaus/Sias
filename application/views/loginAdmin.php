@@ -14,7 +14,7 @@
   <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/popper.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
 </head>
-<body style="background: #16448e" <?php if ($login == "fail"){ echo "onload=loginFail()";} if ($buatAkun == "ya"){ echo "onload=buatAkunSukses()";} ?> >
+<body style="background: #4f83cc" <?php if ($login == "fail"){ echo "onload=loginFail()";} if ($buatAkun == "ya"){ echo "onload=buatAkunSukses()";} ?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -23,7 +23,7 @@
   <script src="<?php echo base_url('assets'); ?>/demo/particles.js" ></script>
   <script src="<?php echo base_url('assets'); ?>/js/app.js" ></script>
 
-  <header style="background:rgba(209, 80, 33,0.8); padding: 10px;">
+  <header style="background:rgba(1, 87, 155, 1); padding: 10px;">
     <center>
       <h2 style="color: white">SIAS</h2>
       <h5 style="color: white">Sistem Informasi Akademik Siswa</h5>
@@ -32,7 +32,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4" style=" border-radius: 10px; background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(209, 80, 33,0.8);">
+        <div class="col-md-4" style=" border-radius: 10px; background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(1, 87, 155, 1); height:260px;">
           <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_user/login/admin') ?>" >
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center style="color: white;">Login Admin</center></h3></b>
@@ -47,7 +47,7 @@
             </div>
             <center>
               <div class="form-group">
-                  <button type="submit" onsubmit="return validasiLogin()" class="btn btn-default">Login</button>
+                  <button type="submit" onsubmit="return validasiLogin()" style="margin-top: 8px" class="btn btn-default">Login</button>
               </div>
               <a href="#" id="buatAkunAdmin">Buat Akun Admin</a>
             </center>
@@ -59,7 +59,7 @@
 
       </div>
     </div>
-    <div style="margin-top: 40px; height: 60px; background:rgba(209, 80, 33,0.8); padding: 10px; bottom: 0; position: absolute; width: 100%;">
+    <div style="margin-top: 40px; height: 60px; background:rgba(1, 87, 155, 1); padding: 10px; bottom: 0; position: absolute; width: 100%;">
       <h4 class="text-center" style="vertical-align: center; color: white"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 Kelompok 7</h4>
     </div>
 </body>
@@ -161,5 +161,3 @@ function buatAkunSukses() {
 //   valPsw(document.getElementById('psw'), 'Pass harus berisi angka dan maksimal berisi 11 karakter');
 // }
 </script>
-
-
