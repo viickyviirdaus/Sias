@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px; margin-top: 15px">
 		<h3>Rapor Siswa</h3>
 		<div class="row">
@@ -20,8 +20,8 @@
 			</div>
 		</div>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th style="width: 50px">No</th>
 					<th >Nama Mata Pelajaran</th>
 					<th style="width: 120px">Nilai Akhir</th>
@@ -37,12 +37,12 @@
 					<td class="text-center" ><?php if($nilai->nilai_akhir >0){echo $nilai->nilai_akhir;} else {echo "Belum Ada";} ?></td>
 					<td class="text-center" ><?php echo $nilai->kkm ?></td>
 				</tr>
-				<?php endforeach ?>		
+				<?php endforeach ?>
 				<tr style="text-align: left;">
 					<td class="text-center" ></td>
 					<td class="text-left" >Rata-Rata </td>
 					<td class="text-center" ><?php if($ratarata >0){echo $ratarata;} else {echo "Belum Ada";} ?></td>
-				</tr>		
+				</tr>
 			</tbody>
 		</table>
 		<div class="row">
@@ -89,8 +89,8 @@
 						</div>
 			</form>
 						<div class="col-sm-3">
-							<button type="button" class="btn btn-default btn-block" id="closeModalTambahCatatan">Batal</button>	
-						</div>					
+							<button type="button" class="btn btn-default btn-block" id="closeModalTambahCatatan">Batal</button>
+						</div>
 					</div>
 				</div>
 		</div>

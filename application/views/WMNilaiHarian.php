@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Nilai Siswa</h3>
 		<h5 style="text-align: left; padding-left: 170px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
@@ -6,8 +6,8 @@
 			<button class="btn btn-default" style="margin-left: 900px; width: 100px;">Rapor</button>
 		</form>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th class="text-center" style="width: 25px">No</th>
 					<th class="text-center">Nama Mata Pelajaran</th>
 					<th class="text-center" style="width: 120px">Tugas 1</th>
@@ -27,7 +27,7 @@
 					<td class="text-center" style=""><?php if($nilai->uts >0){echo $nilai->uts;} else {echo "Belum Ada";} ?></td>
 					<td class="text-center" style=""><?php if($nilai->uas >0){echo $nilai->uas;} else {echo "Belum Ada";} ?></td>
 				</tr>
-				<?php endforeach ?>						
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>

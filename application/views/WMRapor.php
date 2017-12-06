@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 50px; margin-top: 15px">
 		<h3>Rapor Siswa</h3>
 		<div class="row">
@@ -23,8 +23,8 @@
 			<button class="btn btn-default" style="margin-left: 885px">Lihat Detail</button>
 		</form>
 		<table class="table table-bordered" style="width: 982px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th style="width: 50px">No</th>
 					<th >Nama Mata Pelajaran</th>
 					<th style="width: 120px">Nilai Akhir</th>
@@ -40,12 +40,12 @@
 					<td class="text-center" ><?php if($nilai->nilai_akhir >0){echo $nilai->nilai_akhir;} else {echo "Belum Ada";} ?></td>
 					<td class="text-center" ><?php echo $nilai->kkm ?></td>
 				</tr>
-				<?php endforeach ?>		
+				<?php endforeach ?>
 				<tr style="text-align: left;">
 					<td class="text-center" ></td>
 					<td class="text-left" >Rata-Rata </td>
 					<td class="text-center" ><?php echo $ratarata ?></td>
-				</tr>		
+				</tr>
 			</tbody>
 		</table>
 		<div class="row">
