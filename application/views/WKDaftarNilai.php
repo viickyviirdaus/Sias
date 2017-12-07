@@ -1,4 +1,4 @@
-<div class="body" style="min-height: 555px;text-align: center;">
+<div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
 		<h3>Daftar Nilai Siswa</h3>
 		<h5 style="text-align: left; padding-left: 110px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
@@ -6,17 +6,17 @@
 			<div class="col-md-6">
 				<form action="<?php echo base_url('index.php/Controller_siswa/tampilSiswa/'.$idKelas); ?>">
 					<button class="btn btn-danger" style="margin-right:270px ; width: 100px;">Daftar Siswa</button>
-				</form>	
+				</form>
 			</div>
 			<div class="col-md-6">
 				<form action="<?php echo base_url('index.php/Controller_rapor/lihatNilaiRapor/'.$idSiswa.'/'.$idKelas); ?>">
 					<button class="btn btn-default" style="margin-left: 215px; width: 100px;">Rapor</button>
-				</form>	
-			</div>			
+				</form>
+			</div>
 		</div>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
-			<thead>	
-				<tr>	
+			<thead>
+				<tr>
 					<th>No</th>
 					<th style="width: 300px">Nama Mata Pelajaran</th>
 					<th style="width: 120px">Tugas 1</th>
@@ -36,7 +36,7 @@
 						<td class="text-center" style="padding-top: 35px"><?php if($nilai->uts >0){echo $nilai->uts;} else {echo "Belum Ada";} ?></td>
 						<td class="text-center" style="padding-top: 35px"><?php if($nilai->uas >0){echo $nilai->uas;} else {echo "Belum Ada";} ?></td>
 						<td class="text-center">
-							<form action="<?php echo base_url('index.php/Controller_nilai/tampilNilaiSiswa/input/'.$idSiswa.'/'.$idKelas.'/'.$nilai->id_mata_pelajaran); ?>">	
+							<form action="<?php echo base_url('index.php/Controller_nilai/tampilNilaiSiswa/input/'.$idSiswa.'/'.$idKelas.'/'.$nilai->id_mata_pelajaran); ?>">
 								<button class="btn btn-default" style="width: 130px">Masukkan Nilai</button>
 							</form>
 							<form action="<?php echo base_url('index.php/Controller_nilai/tampilNilaiSiswa/edit/'.$idSiswa.'/'.$idKelas.'/'.$nilai->id_mata_pelajaran); ?>">
@@ -44,7 +44,7 @@
 							</form>
 						</td>
 					</tr>
-				<?php endforeach ?>					
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>

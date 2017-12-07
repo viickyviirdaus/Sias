@@ -1,6 +1,6 @@
 <div class="body" style="min-height: 700px;text-align: center;">
 	<div class="container-fluid" style="padding-top: 80px;">
-		<h3>Daftar Nilai Siswa</h3>
+		<h3>Nilai Harian Siswa</h3>
 		<h5 style="text-align: left; padding-left: 170px; padding-top: 30px"><?php echo $data_login['nama'] ?></h5>
 		<form action="<?php echo base_url('index.php/Controller_rapor/tampilRapor/'.$idSiswa.'/'.$idKelas); ?>">
 			<button class="btn btn-default" style="margin-left: 900px; width: 100px;">Rapor</button>
