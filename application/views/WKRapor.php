@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<img src="<?php echo base_url('assets/image/'); ?><?php echo $data[0]->foto ?>" style="max-width: 20%; padding-top: 10px">
+				<img src="<?php echo base_url('uploads/'); ?><?php echo $data[0]->foto ?>" style="max-width: 20%; padding-top: 10px">
 			</div>
 		</div>
 		<table class="table table-bordered" style="width: 1000px; margin-top: 15px" align="center">
