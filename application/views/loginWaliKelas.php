@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
 
 </head>
-<body style="background: #282931" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
+<body style="background: #d17f61" <?php if ($login == "fail"){ echo "onload=loginFail()";}?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -25,7 +25,7 @@
   <script src="<?php echo base_url('assets'); ?>/js/app.js" ></script>
 
 
-  <header style="background:rgba(0,0,0,0.3); padding: 10px;">
+  <header style="background:rgba(166, 80, 48, 0.96); padding: 10px;">
     <center >
       <h2 style="color: white">SIAS</h2>
       <h5 style="color: white">Sistem Informasi Akademik Siswa</h5>
@@ -34,7 +34,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4" style="background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(0,0,0,0.6);">
+        <div class="col-md-4" style="background-color: white; margin-top: 95px; margin-bottom: 175px; background:rgba(166, 80, 48, 0.96);">
           <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/Controller_user/login/waliKelas') ?>" >
             <div class="form-group" style="margin-top: 5px; ">
               <b><h3><center style="color: white;">Login Wali Kelas</center></h3></b>
@@ -60,7 +60,7 @@
 
       </div>
     </div>
-    <div style="margin-top: 40px; height: 60px; background:rgba(0,0,0,0.3); bottom: 0; position: absolute; width: 100%;">
+    <div style="margin-top: 40px; height: 60px; background:rgba(166, 80, 48, 0.96); bottom: 0; position: absolute; width: 100%;">
       <h4 class="text-center" style="vertical-align: center; color: white"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 Kelompok 7</h4>
     </div>
 </body>
