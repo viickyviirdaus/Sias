@@ -13,6 +13,26 @@
   <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/bootstrap.js"></script>
   <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/popper.min.js"></script>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets');?>/css/background.css"  >
+  <style>
+      .btn-group .button {
+          background-color: #4f83cc;
+          margin-right: 8px;
+          color: white;
+          padding: 10px 24px;;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          cursor: pointer;
+          float: right;
+          border-radius: 10px;
+          border-color: black;
+        }
+      .btn-group .button:hover{
+        background-color: white;
+        color: black;
+      }
+  </style>
 </head>
 <body style="background: #4f83cc" <?php if ($login == "fail"){ echo "onload=loginFail()";} if ($buatAkun == "ya"){ echo "onload=buatAkunSukses()";} ?> >
 
@@ -70,7 +90,7 @@
 
                 <!-- Modal content-->
                 <div class="modal-content" id="formBody">
-                    <div class="modal-header" id="formHeader">
+                    <div class="modal-header" id="formHeader" style="padding:5px;">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 align="left"></span>Buat Akun Admin</h4>
                     </div>
@@ -91,8 +111,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" onsubmit="validasiBuat()" class="btn btn-success btn-block" id="formSubmit">Buat Akun</button>
-                            <button type="batal" class="btn btn-success btn-block" id="closeModalAdmin">Batal</button>
+                          <div class="btn-group">
+                            <button type="submit" onsubmit="validasiBuat()" class="button" id="formSubmit">Buat Akun</button>
+                            <button type="batal" class="button" id="closeModalAdmin">Batal</button>
+                          </div>
                         </div>
                     </form>
                 </div>
