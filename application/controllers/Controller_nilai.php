@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Controller_nilai extends CI_Controller {
@@ -20,7 +20,7 @@ class Controller_nilai extends CI_Controller {
 		// var_dump($param);
 		$this->load->view('headerWali');
 		$this->load->view('WKDaftarNilai', $param);
-		$this->load->view('footer');		
+		$this->load->view('footer');
 	}
 
 	public function tampilNilaiHarian($id, $idKelas){
@@ -34,7 +34,7 @@ class Controller_nilai extends CI_Controller {
 		// var_dump($param);
 		$this->load->view('headerWali');
 		$this->load->view('WMNilaiHarian', $param);
-		$this->load->view('footer');		
+		$this->load->view('footer');
 	}
 
 	public function tampilNilaiSiswa($key,$id, $idKelas, $mataPelajaran){
@@ -48,7 +48,7 @@ class Controller_nilai extends CI_Controller {
 		// var_dump($param);
 		$this->load->view('headerWali');
 		$this->load->view('WKMasukEditNilai', $param);
-		$this->load->view('footer');			
+		$this->load->view('footer');
 	}
 
 	public function simpanNilaiSiswa(){
@@ -63,8 +63,7 @@ class Controller_nilai extends CI_Controller {
 		$uas = (int)str_replace("",'' , $uas);
 		$nilai_akhir = ($tugas1+$tugas2+$uts+$uas)/4;
 
-		// $nilai_akhir = $tugas1+$tugas2;
-		// var_dump($tugas1+$tugas2);
+
 		$dataSimpan = array(
 			'tugas1'		=> $tugas1,
 			'tugas2'		=> $tugas2,
@@ -72,7 +71,7 @@ class Controller_nilai extends CI_Controller {
 			'uas'			=> $uas,
 			'nilai_akhir'	=> $nilai_akhir,
 		);
-		// var_dump($data);
+
 		$id_siswa = $this->input->post('idSiswa');
 		$idKelas = $this->input->post('idKelas');
 		$idNilai = $this->input->post('idNilai');
@@ -116,7 +115,7 @@ class Controller_nilai extends CI_Controller {
 		$idNilai = $this->input->post('idNilai');
 		// var_dump($id_siswa);
 		$this->Model_nilai->ubahNilaiSiswa($dataUbah, $idNilai, $tabel);
-		
+
 		$data = $this->Model_nilai->tampilSemuaNilai($id_siswa,$idKelas);
 		$param = array(
 			'data' 	=> $data,
@@ -127,9 +126,9 @@ class Controller_nilai extends CI_Controller {
 		);
 		$this->load->view('headerWali');
 		$this->load->view('WKDaftarNilai', $param);
-		$this->load->view('footer');		
+		$this->load->view('footer');
 	}
-	
+
 }
 
  ?>
