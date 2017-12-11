@@ -95,7 +95,8 @@ class Controller_user extends CI_Controller {
 			$password = md5($this->input->post('psw'));
 			$where = array(
 				'nip' 		=> $nip,
-				'password' 	=> $password
+				'password' 	=> $password,
+				'status' 	=> "aktif"
 				);
 
 			$data = $this->Model_user->loginWaliKelas("wali_kelas",$where)->result();
