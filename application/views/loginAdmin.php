@@ -34,7 +34,7 @@
       }
   </style>
 </head>
-<body style="background: #4f83cc" <?php if ($login == "fail"){ echo "onload=loginFail()";} if ($buatAkun == "ya"){ echo "onload=buatAkunSukses()";} ?> >
+<body style="background: #4f83cc" <?php if ($login == "fail"){ echo "onload=loginFail()";} ?> >
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -69,7 +69,6 @@
               <div class="form-group">
                   <button type="submit" onsubmit="return validasiLogin()" style="margin-top: 8px" class="btn btn-default">Login</button>
               </div>
-              <a href="#" id="buatAkunAdmin">Buat Akun Admin</a>
             </center>
           </form>
         </div>
@@ -84,63 +83,14 @@
     </div>
 </body>
 
-<!-- Modal -->
-        <div class="modal fade" id="modalBuatAkunAdmin" role="dialog">
-            <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content" id="formBody">
-                    <div class="modal-header" id="formHeader" style="padding:5px;">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 align="left"></span>Buat Akun Admin</h4>
-                    </div>
-
-                    <form role="form" method="post" action="<?php echo base_url('index.php/Controller_user/tambahAkunAdmin'); ?>">
-                        <div class="modal-body" style="padding:20px 50px;">
-                            <div class="form-group">
-                                <label for="nama">Nama Lengkap</label>
-                                <input name="nama" type="text" class="form-control" id="nama" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nip">NIP</label>
-                                <input name="nip" type="text" class="form-control" id="nip" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="psw">Password</label>
-                                <input name="psw" type="password" class="form-control" id="psw" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                          <div class="btn-group">
-                            <button type="submit" onsubmit="validasiBuat()" class="button" id="formSubmit">Buat Akun</button>
-                            <button type="batal" class="button" id="closeModalAdmin">Batal</button>
-                          </div>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
 </html>
 
 <script>
 function loginFail() {
     alert("NIP atau Password yang anda masukkan salah!");
 }
-function buatAkunSukses() {
-    alert("Akun admin baru telah dibuat.");
-}
-            $(document).ready(function () {
-                $("#buatAkunAdmin").click(function () {
-                    $("#modalBuatAkunAdmin").modal();
-                });
-            });
 
-            $(document).ready(function () {
-                $('#closeModalAdmin').click(function() {
-                    $('#modalBuatAkunAdmin').modal('hide');
-                });
-            });
 
 // function valNama(nilai, pesan) {
 //   var namaExp = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$/;

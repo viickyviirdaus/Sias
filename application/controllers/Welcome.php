@@ -29,7 +29,6 @@ class Welcome extends CI_Controller {
 	{
 		$param = array(
 			'login' 	=> 'nofail',
-			'buatAkun' 	=> 'tidak'
 		);
 		$this->load->view('loginAdmin', $param);
 	}

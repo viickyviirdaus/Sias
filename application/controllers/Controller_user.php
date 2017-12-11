@@ -38,7 +38,6 @@ class Controller_user extends CI_Controller {
 			}else{
 				$param = array(
 					'login' 	=> 'fail',
-					'buatAkun' 	=> 'tidak'
 				);
 				$this->load->view('loginAdmin', $param);
 			}
@@ -139,7 +138,6 @@ class Controller_user extends CI_Controller {
 			$this->session->sess_destroy();
 			$param = array(
 				'login' 	=> 'nofail',
-				'buatAkun' 	=> 'tidak'
 			);
 			$this->load->view('loginAdmin', $param);
 		} elseif ($this->session->userdata('status') == 'siswa') {
@@ -169,9 +167,10 @@ class Controller_user extends CI_Controller {
 		);
 		$this->Model_user->tambahAkunAdmin($data, $tabel);
 		$param = array(
-				'login' 	=> 'nofail',
 				'buatAkun' 	=> 'ya'
 			);
-		$this->load->view('loginAdmin', $param);
+		$this->load->view('headerAdmin');
+		$this->load->view('dashboardAdmin', $param);
+		$this->load->view('footer');
 	}
 }
