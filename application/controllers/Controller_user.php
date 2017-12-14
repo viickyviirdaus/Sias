@@ -52,8 +52,12 @@ class Controller_user extends CI_Controller {
 				);
 			$data = $this->Model_user->loginSiswa("siswa",$where)->result();
 			// var_dump($data);
-			$id = $data[0]->id_siswa;
-			// var_dump($id);
+			if ($data == null) {
+						
+			} else {
+				$id = $data[0]->id_siswa;
+				var_dump($id);		
+			}
 			$cek = $this->Model_user->loginSiswa("siswa",$where)->num_rows();
 			if($cek == 1){
 				$cekKelas = $this->Model_nilai->kelasSiswa($id);
@@ -82,8 +86,8 @@ class Controller_user extends CI_Controller {
 				$this->load->view('headerWali');
 				$this->load->view('WMNilaiHarian', $param);
 				$this->load->view('footer');
-				// $this->session->set_userdata($data_session);
-				// $this->load->view('WMNilaiHarian');
+				$this->session->set_userdata($data_session);
+				$this->load->view('WMNilaiHarian');
 			}else{
 				$param = array(
 					'login' => 'fail',

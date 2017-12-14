@@ -14,7 +14,7 @@
 						<input type="hidden" name="id" value="<?php echo $data->id_wali_kelas ?>">
 						<input type="text" name="nama" value="<?php echo $data->nama ?>" class="form-control" required>
 						<input type="text" name="nip" value="<?php echo $data->nip ?>" class="form-control" style="margin-top: 15px" required>
-						<input type="text" name="password" value=" " class="form-control" style="margin-top: 15px" required>
+						<input type="text" name="password"  class="form-control" style="margin-top: 15px" required>
 						<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 28px">Simpan</button>
 						<a href="<?php echo base_url('index.php/Controller_waliKelas/tampilWaliKelasAktif'); ?>" class="btn btn-default" style="width: 80px; margin-top: 20px; margin-left: 3px">Batal</a>
 					</form>

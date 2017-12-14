@@ -23,7 +23,7 @@
 					<input type="text" name="nis" value="<?php echo $data->nis ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="nisn" value="<?php echo $data->nisn ?>" class="form-control" style="margin-top: 15px" required>
 					<input type="text" name="jk" value="<?php echo $data->jenis_kelamin ?>" class="form-control" style="margin-top: 15px" required>
-					<input type="text" name="password" value=" " class="form-control" style="margin-top: 15px" required>
+					<input type="text" name="password" class="form-control" style="margin-top: 15px" required>
 					<button type="submit" class="btn btn-primary" style="width: 80px; margin-top: 20px; margin-left: 17px">Simpan</button>
 					<a href="<?php echo base_url('index.php/Controller_siswa/tampilSiswaAktif'); ?>" class="btn btn-default" style="width: 80px; margin-top: 20px; margin-left: 3px">Batal</a>
 				</div>

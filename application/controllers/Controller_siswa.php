@@ -95,6 +95,7 @@ class Controller_siswa extends CI_Controller {
 		$data = array(
 			'nama_siswa'		=> $this->input->post('nama'),
 			'nis'				=> $this->input->post('nis'),
+			'nisn'				=> $this->input->post('nisn'),
 			'jenis_kelamin'		=> $this->input->post('jk'),
 			'password'			=> md5($this->input->post('password')),
 			'foto'				=> $file_name
