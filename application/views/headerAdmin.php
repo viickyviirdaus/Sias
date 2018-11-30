@@ -72,13 +72,13 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th fa-fw" aria-hidden="true"></i> Kelas <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<? echo base_url('index.php/Controller_kelas/tampilKelas'); ?>">Lihat Kelas</a></li>
+                            <li><a href="<?php echo base_url('index.php/Controller_kelas/tampilKelas'); ?>">Lihat Kelas</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list fa-fw" aria-hidden="true"></i> Mata Pelajaran <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<? echo base_url('index.php/Controller_mapel/tampilMapel'); ?>">Lihat Mata Pelajaran</a></li>
+							<li><a href="<?php echo base_url('index.php/Controller_mapel/tampilMapel'); ?>">Lihat Mata Pelajaran</a></li>
 						</ul>
 					</li>
 				</ul>

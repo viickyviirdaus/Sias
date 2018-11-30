@@ -132,6 +132,8 @@ class Controller_kelas extends CI_Controller {
 		$this->ambilDataKelas($id_kelas,'dataSiswa');
 	}
 
+
+///////////////////////diooooooooooooooooooooooooooooooooooooooooooooooooooo//////////////////////////////////
 	public function tambahMapelDalamKelas(){
 		$tabel = 'detail_mata_pelajaran';
 		$id_kelas = $this->input->post('id');
